@@ -1,0 +1,28 @@
+:root {
+  /* --- COLORS --- */
+  /* --- Neutral --- */
+  --palette-neutral-50: #f8fafc;
+  --palette-neutral-100: #f1f5f9;
+  --palette-neutral-200: #e2e8f0;
+  --palette-neutral-300: #cbd5e1;
+  --palette-neutral-400: #94a3b8;
+  --palette-neutral-500: #64748b;
+  --palette-neutral-600: #475569;
+  --palette-neutral-700: #334155;
+  --palette-neutral-800: #1e293b;
+  --palette-neutral-900: #0f172a;
+  --palette-neutral-950: #020617;
+
+  /* --- Primary --- */
+  --palette-primary-50: #f5f3ff;
+  --palette-primary-100: #ece9fe;
+  --palette-primary-200: #dcd6fe;
+  --palette-primary-300: #c1b4fe;
+  --palette-primary-400: #a28afb;
+  --palette-primary-500: #845af8;
+  --palette-primary-600: #7438ef;
+  --palette-primary-700: #6626db;
+  --palette-primary-800: #551fb8;
+  --palette-primary-900: #481c96;
+  --palette-primary-950: #2b0f66;
+}
