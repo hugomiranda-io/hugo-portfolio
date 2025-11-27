@@ -1,8 +1,6 @@
 @import "./reset.css";
 @import "./variables.css";
 
-:root {
-  body {
-    background-color: var(--bg);
-  }
+body {
+  background-color: var(--bg);
 }
