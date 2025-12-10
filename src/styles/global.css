@@ -1,6 +1,220 @@
-@import "./reset.css";
-@import "./variables.css";
+@layer resetcss {
+  /* 1. Use a more-intuitive box-sizing model */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  background-color: var(--bg);
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+
+  /* 3. Enable keyword animations */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 6. Improve media defaults */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* 7. Inherit fonts for form controls */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* 8. Avoid text overflows */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* 9. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  /*
+  10. Create a root stacking context
+*/
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
+
+@layer colors {
+  :root {
+    color-scheme: light dark;
+
+    --color-white: #ffffff;
+    --color-black: #0c0c0c;
+
+    --color-neutral-0: light-dark(var(--color-white), var(--color-black));
+    --color-neutral-1: light-dark(#fcfcfd, #111113);
+    --color-neutral-2: light-dark(#f9f9fb, #18191b);
+    --color-neutral-3: light-dark(#f0f0f3, #212225);
+    --color-neutral-4: light-dark(#e8e8ec, #272a2d);
+    --color-neutral-5: light-dark(#e0e1e6, #2e3135);
+    --color-neutral-6: light-dark(#d9d9e0, #363a3f);
+    --color-neutral-7: light-dark(#cdced6, #43484e);
+    --color-neutral-8: light-dark(#b9bbc6, #5a6169);
+    --color-neutral-9: light-dark(#8b8d98, #696e77);
+    --color-neutral-10: light-dark(#80838d, #777b84);
+    --color-neutral-11: light-dark(#60646c, #b0b4ba);
+    --color-neutral-12: light-dark(#1c2024, #edeef0);
+    --color-neutral-13: light-dark(var(--color-black), var(--color-white));
+
+    @supports (color: oklch(0 0 0)) {
+      --color-white: oklch(1 0 0);
+      --color-black: oklch(0.154 0 0);
+
+      --color-neutral-0: light-dark(var(--color-white), var(--color-black));
+
+      --color-neutral-1: light-dark(
+        oklch(0.993 0.002 256),
+        oklch(0.165 0.007 264)
+      );
+      --color-neutral-2: light-dark(
+        oklch(0.982 0.002 256),
+        oklch(0.197 0.008 264)
+      );
+      --color-neutral-3: light-dark(
+        oklch(0.959 0.004 256),
+        oklch(0.256 0.011 264)
+      );
+      --color-neutral-4: light-dark(
+        oklch(0.936 0.006 256),
+        oklch(0.303 0.013 264)
+      );
+      --color-neutral-5: light-dark(
+        oklch(0.914 0.008 256),
+        oklch(0.349 0.014 264)
+      );
+      --color-neutral-6: light-dark(
+        oklch(0.889 0.01 256),
+        oklch(0.396 0.016 264)
+      );
+      --color-neutral-7: light-dark(
+        oklch(0.859 0.012 256),
+        oklch(0.459 0.018 264)
+      );
+      --color-neutral-8: light-dark(
+        oklch(0.811 0.016 256),
+        oklch(0.548 0.02 264)
+      );
+      --color-neutral-9: light-dark(
+        oklch(0.645 0.018 256),
+        oklch(0.645 0.018 256)
+      ); /* même valeur */
+      --color-neutral-10: light-dark(
+        oklch(0.601 0.02 256),
+        oklch(0.716 0.016 256)
+      );
+      --color-neutral-11: light-dark(
+        oklch(0.501 0.018 256),
+        oklch(0.86 0.008 256)
+      );
+      --color-neutral-12: light-dark(
+        oklch(0.378 0.016 256),
+        oklch(0.932 0.004 256)
+      );
+      --color-neutral-13: light-dark(var(--color-black), var(--color-white));
+    }
+  }
+}
+
+@layer sizes {
+  :root {
+    --size-base: 2;
+    --size-3xs: calc(var(--size-base) * 1);
+    --size-2xs: calc(var(--size-base) * 2);
+    --size-xs: calc(var(--size-base) * 4);
+    --size-sm: calc(var(--size-base) * 6);
+    --size-md: calc(var(--size-base) * 8);
+    --size-lg: calc(var(--size-base) * 10);
+    --size-xl: calc(var(--size-base) * 12);
+    --size-2xl: calc(var(--size-base) * 16);
+    --size-3xl: calc(var(--size-base) * 32);
+    --size-4xl: calc(var(--size-base) * 64);
+
+    --radius-inside: var(--size-md);
+    --radius-default: var(--size-sm);
+    --radius-outside-lg: var(--size-lg);
+    --radius-outside-xl: var(--size-xl);
+    --radius-rounded: 9999rem;
+
+    --icon-sm: var(--size-sm);
+    --icon-md: var(--size-xl);
+    --icon-lg: var(--size-2xl);
+  }
+}
+
+@layer theme {
+  :root {
+    --color-surface-app: var(--color-neutral-1);
+    --color-surface-subtle: var(--color-neutral-2);
+    --color-surface-solid: var(--color-neutral-12);
+    --color-surface-solid-hover: var(--color-neutral-13);
+    --color-surface-theme: var(--color-neutral-0);
+    --color-surface-opposite-theme: var(--color-neutral-13);
+
+    --color-ui: var(--color-neutral-3);
+    --color-ui-hover: var(--color-neutral-4);
+    --color-ui-active: var(--color-neutral-5);
+
+    --color-border-app: var(--color-surface-app);
+    --color-border-subtle: var(--color-neutral-6);
+    --color-border: var(--color-neutral-7);
+    --color-border-hover: var(--color-neutral-8);
+
+    --color-text-low: var(--color-neutral-11);
+    --color-text-hight: var(--color-neutral-12);
+    --color-text-theme: var(--color-neutral-1);
+
+    --color-icon-low: var(--color-neutral-11);
+    --color-icon-hight: var(--color-neutral-12);
+    --color-icon-theme: var(--color-neutral-1);
+  }
+}
+
+@layer responsive {
+  :root {
+    --body-max-width: 720px;
+    --body-margin: var(--size-xl);
+    --body-gutter: var(--size-md);
+  }
 }
