@@ -11,8 +11,18 @@ import "../styles/global.css"
 		<meta name="generator" content={Astro.generator} />
 		<title>Hugo Miranda - Portfolio</title>
 	</head>
-	<body>
-        <h2>Hugo Miranda</h2>
-		<slot></slot>
+	<body class="surface-app">
+		<header class="container-app mx-auto">
+			Header
+		</header>
+		<main class="container-app mx-auto pt-4xl pb-3xl">
+			<slot></slot>
+		</main>
+		<footer class="surface-subtle pt-3xl pb-3xl">
+			<div class="container-app mx-auto">
+
+				Footer
+			</div>
+		</footer>
 	</body>
 </html>
