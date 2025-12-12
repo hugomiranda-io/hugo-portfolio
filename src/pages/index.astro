@@ -1,6 +1,7 @@
 ---
-import Cta from '../components/cta/cta';
+import { Cta, Tile } from '../components';
 import Layout from '../layouts/Layout.astro';
+import { Handshake, Blocks } from 'lucide-react';
 
 
 ---
@@ -21,9 +22,9 @@ import Layout from '../layouts/Layout.astro';
 		</p>
 		</div>
 		</div>
-		<div>
-			<Cta>Sign in width Google</Cta>
-			<Cta as="a" href='#'>Sign in width Google</Cta>
+		<div class="flex flex-row gap-md">
+			<Tile title='+5 Ans' description='Expérience' icon={Handshake}></Tile>
+			<Tile as="a" href="#" title='Design & Code' description='Double compétence' icon={Blocks}></Tile>
 		</div>
 	</div>
 </Layout>

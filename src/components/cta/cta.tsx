@@ -27,7 +27,7 @@ type AnchorElementProps = {
 
 type CtaProps = CommonProps & (ButtonElementProps | AnchorElementProps);
 
-export default function Button(props: CtaProps) {
+export default function Cta(props: CtaProps) {
   const {
     label,
     children,
@@ -51,16 +51,16 @@ export default function Button(props: CtaProps) {
         {RightIcon ? <RightIcon /> : null}
       </a>
     );
+  } else {
+    const { type = "button", ...buttonProps } =
+      rest as React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+    return (
+      <button className={mergedClassName} type={type} {...buttonProps}>
+        {LeftIcon ? <LeftIcon /> : null}
+        <span className="btn__label">{content}</span>
+        {RightIcon ? <RightIcon /> : null}
+      </button>
+    );
   }
-
-  const { type = "button", ...buttonProps } =
-    rest as React.ButtonHTMLAttributes<HTMLButtonElement>;
-
-  return (
-    <button className={mergedClassName} type={type} {...buttonProps}>
-      {LeftIcon ? <LeftIcon /> : null}
-      <span className="btn__label">{content}</span>
-      {RightIcon ? <RightIcon /> : null}
-    </button>
-  );
 }
