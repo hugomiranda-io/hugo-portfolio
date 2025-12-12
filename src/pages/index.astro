@@ -1,7 +1,7 @@
 ---
 import { Cta, Tile } from '../components';
 import Layout from '../layouts/Layout.astro';
-import { Handshake, Blocks } from 'lucide-react';
+import { Handshake, Blocks, Ear, Code, Component, ScrollText } from 'lucide-react';
 
 
 ---
@@ -22,9 +22,17 @@ import { Handshake, Blocks } from 'lucide-react';
 		</p>
 		</div>
 		</div>
-		<div class="flex flex-row gap-md">
-			<Tile title='+5 Ans' description='Expérience' icon={Handshake}></Tile>
-			<Tile as="a" href="#" title='Design & Code' description='Double compétence' icon={Blocks}></Tile>
+		<div class="flex flex-col gap-md">
+			<div class="container-grid">
+				<Tile title='+5 Ans' description='Expérience' icon={Handshake}></Tile>
+				<Tile title='Design & Code' description='Double compétence' icon={Blocks}></Tile>
+				<Tile title="À l'écoute" description='Disponibilité' icon={Ear}></Tile>
+			</div>
+			<div class="container-grid">
+				<Tile title='Stack JS' description='Front-end' icon={Code}></Tile>
+				<Tile title="Figma" description='Ui design' icon={Component}></Tile>
+				<Tile as="a" href="#" title='Parcours' description='En savoir plus' icon={ScrollText}></Tile>
+			</div>
 		</div>
 	</div>
 </Layout>
