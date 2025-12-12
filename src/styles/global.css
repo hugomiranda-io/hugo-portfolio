@@ -278,6 +278,15 @@
     min-height: 2.5rem;
     border-radius: var(--radius-default);
 
+    &.btn-primary {
+      color: var(--color-text-theme);
+      background-color: var(--color-surface-solid);
+
+      & svg {
+        stroke: var(--color-icon-theme);
+      }
+    }
+
     &.btn-soft {
       color: var(--color-text-hight-contrast);
       background-color: var(--color-ui);
@@ -300,6 +309,10 @@
 
   .btn:hover {
     cursor: pointer;
+
+    &.btn-primary {
+      background-color: var(--color-surface-solid-hover);
+    }
 
     &.btn-soft {
       background-color: var(--color-ui-hover);
