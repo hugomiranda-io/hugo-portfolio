@@ -1,7 +1,7 @@
 ---
-import { Cta, Tile } from '../components';
+import { Tile } from '../components';
 import Layout from '../layouts/Layout.astro';
-import { Handshake, Blocks, Ear, Code, Component, ScrollText } from 'lucide-react';
+import { Handshake, Blocks, Ear, Code, Component, ScrollText, Github, Figma, Dribbble } from 'lucide-react';
 
 
 ---
@@ -32,6 +32,14 @@ import { Handshake, Blocks, Ear, Code, Component, ScrollText } from 'lucide-reac
 				<Tile title='Stack JS' description='Front-end' icon={Code}></Tile>
 				<Tile title="Figma" description='Ui design' icon={Component}></Tile>
 				<Tile as="a" href="#" title='Parcours' description='En savoir plus' icon={ScrollText}></Tile>
+			</div>
+		</div>
+		<div class="flex flex-col gap-lg">
+			<h3 class="heading">Mes profils</h3>
+						<div class="container-grid">
+				<Tile as="a" href="#" title='Github' description='Mes projets' icon={Github}></Tile>
+				<Tile as="a" href="#" title='Figma' description='Ma page community' icon={Figma}></Tile>
+				<Tile as="a" href="#" title="Dribbble" description='Mes créations' icon={Dribbble}></Tile>
 			</div>
 		</div>
 	</div>

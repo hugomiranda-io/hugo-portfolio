@@ -206,10 +206,18 @@
     --body-margin: var(--size-xl);
     --body-gutter: var(--size-md);
     /* SHADOW */
-    --shadow-sm: 0 0 2px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px 0 rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 0 2px -1px rgba(0, 0, 0, 0.1),
-      0 4px 6px -4px rgba(0, 0, 0, 0.04), 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 0 2px -1px rgb(from var(--color-black) r g b / 10%),
+      0 2px 4px 0 rgb(from var(--color-black) r g b / 6%);
+    --shadow-md: 0 0 2px -1px rgb(from var(--color-black) r g b / 10%),
+      0 4px 6px -4px rgb(from var(--color-black) r g b / 6%),
+      0 10px 15px -3px rgb(from var(--color-black) r g b / 4%);
+    @supports (color: oklch(0 0 0)) {
+      --shadow-sm: 0 0 2px -1px oklch(from var(--color-black) l c h / 10%),
+        0 2px 4px 0 oklch(from var(--color-black) l c h / 6%);
+      --shadow-md: 0 0 2px -1px oklch(from var(--color-black) l c h / 10%),
+        0 4px 6px -4px oklch(from var(--color-black) l c h / 6%),
+        0 10px 15px -3px oklch(from var(--color-black) l c h / 4%);
+    }
   }
 }
 
@@ -397,6 +405,54 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: var(--body-gutter);
+  }
+
+  .grid-col-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .grid-col-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .grid-col-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .grid-col-4 {
+    grid-column: span 4 / span 4;
+  }
+
+  .grid-col-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  .grid-col-6 {
+    grid-column: span 6 / span 6;
+  }
+
+  .grid-col-7 {
+    grid-column: span 7 / span 7;
+  }
+
+  .grid-col-8 {
+    grid-column: span 8 / span 8;
+  }
+
+  .grid-col-9 {
+    grid-column: span 9 / span 9;
+  }
+
+  .grid-col-10 {
+    grid-column: span 10 / span 10;
+  }
+
+  .grid-col-11 {
+    grid-column: span 11 / span 11;
+  }
+
+  .grid-col-12 {
+    grid-column: span 12 / span 12;
   }
 
   /* MARGIN */
@@ -638,6 +694,10 @@
 
   .surface-subtle {
     background-color: var(--color-surface-subtle);
+  }
+
+  .surface-theme {
+    background-color: var(--color-surface-theme);
   }
 
   .container-app {

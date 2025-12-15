@@ -1,0 +1,40 @@
+import Cta from "../cta/cta";
+import { Mail, Earth } from "lucide-react";
+import "./footer.css";
+
+export default function Footer() {
+  return (
+    <footer id="footer" className="surface-subtle pt-3xl pb-3xl">
+      <div className="container-app mx-auto container-grid">
+        <div className="contact-card">
+          <div className="contact-card__header">
+            <Mail />
+            <h4 className="heading">Contact</h4>
+          </div>
+          <div className="contact-card__body ">
+            <p className="text-low-contrast ">
+              Je suis toujours ouvert aux échanges — projets, collaborations ou
+              simples idées. Écrivez-moi !
+            </p>
+            <Cta as="a" href="mailTo:contact@contact.com" variant="primary">
+              Contact
+            </Cta>
+          </div>
+        </div>
+        <div className="contact-card">
+          <div className="contact-card__header">
+            <Earth />
+            <h4 className="heading">Présence en ligne</h4>
+          </div>
+          <div className="contact-card__body ">
+            <Cta as="a" href="#" variant="soft" label="LinkedIn" />
+            <Cta as="a" href="#" variant="soft" label="Github" />
+            <Cta as="a" href="#" variant="soft" label="Figma" />
+            <Cta as="a" href="#" variant="soft" label="Dribbble" />
+            <Cta as="a" href="#" variant="soft" label="Instagram" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

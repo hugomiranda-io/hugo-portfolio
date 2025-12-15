@@ -4,7 +4,7 @@ import "./cta.css";
 type CommonProps = {
   label?: string;
   children?: React.ReactNode;
-  variant?: "btn-soft" | "btn-primary";
+  variant?: "primary" | "soft";
   leftIcon?: React.ComponentType;
   rightIcon?: React.ComponentType;
   className?: string;
@@ -32,7 +32,7 @@ export default function Cta(props: CtaProps) {
   const {
     label,
     children,
-    variant = "btn-primary",
+    variant = "primary",
     leftIcon: LeftIcon,
     rightIcon: RightIcon,
     className,
@@ -41,7 +41,9 @@ export default function Cta(props: CtaProps) {
   } = props;
 
   const content = children ?? label;
-  const mergedClassName = ["btn", variant, className].filter(Boolean).join(" ");
+  const mergedClassName = ["btn", `btn-${variant}`, className]
+    .filter(Boolean)
+    .join(" ");
 
   if (as === "a") {
     const { href, ...anchorProps } = rest as AnchorElementProps;
