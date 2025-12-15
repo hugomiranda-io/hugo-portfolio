@@ -1,0 +1,25 @@
+.navbar__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--size-2xs) var(--size-md);
+  min-height: 2.5rem;
+  font-size: 0.875rem;
+  border-radius: var(--radius-rounded);
+  color: var(--color-text-low-contrast);
+  transition: 0.2s;
+
+  &:hover {
+    color: var(--color-text-hight-contrast);
+  }
+
+  &.navbar__item--active {
+    color: var(--color-text-hight-contrast);
+    background-color: var(--color-surface-subtle);
+  }
+
+  &.navbar__item--solid {
+    color: var(--color-text-theme);
+    background-color: var(--color-neutral-13);
+  }
+}

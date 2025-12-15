@@ -1,5 +1,5 @@
 ---
-import Footer from "../components/footer/footer"
+import {Footer, Header} from "../components"
 import "../styles/global.css"
 ---
 
@@ -12,8 +12,8 @@ import "../styles/global.css"
 		<title>Hugo Miranda - Portfolio</title>
 	</head>
 	<body class="surface-app">
-		<header class="container-app mx-auto">
-			Header
+		<header class="container-app mx-auto flex justify-center pt-2xl">
+			<Header currentPath={Astro.url.pathname} />
 		</header>
 		<main class="container-app mx-auto pt-4xl pb-3xl">
 			<slot></slot>

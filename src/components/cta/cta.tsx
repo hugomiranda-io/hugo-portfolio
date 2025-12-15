@@ -1,5 +1,5 @@
 import type React from "react";
-import "./cta.css";
+import "./Cta.css";
 
 type CommonProps = {
   label?: string;

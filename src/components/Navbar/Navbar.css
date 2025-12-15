@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-xs);
+  padding: var(--size-2xs);
+  border-radius: var(--radius-rounded);
+  background-color: var(--color-surface-theme);
+  box-shadow: var(--shadow-md);
+}

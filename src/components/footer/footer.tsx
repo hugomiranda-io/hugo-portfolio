@@ -1,12 +1,12 @@
-import Cta from "../cta/cta";
+import Cta from "../Cta/Cta";
 import { Mail, Earth } from "lucide-react";
-import "./footer.css";
+import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="surface-subtle pt-3xl pb-3xl">
+    <footer className="surface-subtle pt-3xl pb-3xl">
       <div className="container-app mx-auto container-grid">
-        <div className="contact-card">
+        <div id="contact" className="contact-card">
           <div className="contact-card__header">
             <Mail />
             <h4 className="heading">Contact</h4>

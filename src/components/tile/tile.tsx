@@ -1,5 +1,5 @@
 import type React from "react";
-import "./tile.css";
+import "./Tile.css";
 
 type CommonProps = {
   title: string;
