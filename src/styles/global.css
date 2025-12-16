@@ -192,7 +192,7 @@
     --color-text-hight-contrast: var(--color-neutral-12);
     --color-text-theme: var(--color-neutral-1);
     --color-icon-low-contrast: var(--color-neutral-11);
-    --color-icon-hight-contrast: var(--color-neutral-12);
+    --color-icon-high-contrast: var(--color-neutral-12);
     --color-icon-theme: var(--color-neutral-1);
     /* BORDER */
     --border-width: 1px;

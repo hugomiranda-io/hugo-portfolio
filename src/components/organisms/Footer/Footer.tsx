@@ -1,4 +1,4 @@
-import Cta from "../Cta/Cta";
+import { Cta, Icon } from "@components/index";
 import { Mail, Earth } from "lucide-react";
 import "./Footer.css";
 
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container-app mx-auto container-grid">
         <div id="contact" className="contact-card">
           <div className="contact-card__header">
-            <Mail />
+            <Icon icon={Mail} size="lg" priority="high" />
             <h4 className="heading">Contact</h4>
           </div>
           <div className="contact-card__body ">
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
         <div className="contact-card">
           <div className="contact-card__header">
-            <Earth />
+            <Icon icon={Earth} size="lg" priority="high" />
             <h4 className="heading">Présence en ligne</h4>
           </div>
           <div className="contact-card__body ">

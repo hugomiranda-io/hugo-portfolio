@@ -1,6 +1,12 @@
-export { default as Cta } from "./Cta/Cta";
-export { default as Tile } from "./Tile/Tile";
-export { default as Footer } from "./Footer/Footer";
-export { default as Navbar } from "./Navbar/Navbar";
-export { default as NavbarItem } from "./Navbar/NavbarItem";
-export { default as Header } from "./Header/Header";
+// COMPONENTS
+export { default as Cta } from "./atoms/Cta/Cta";
+export { default as Icon } from "./atoms/Icon/Icon";
+export { default as Tile } from "./molecules/Tile/Tile";
+export { default as Navbar } from "./molecules/Navbar/Navbar";
+export { default as NavbarItem } from "./molecules/Navbar/NavbarItem";
+export { default as Footer } from "./organisms/Footer/Footer";
+export { default as Header } from "./organisms/Header/Header";
+
+// TYPES
+export { type NavbarItemProps } from "./molecules/Navbar/NavbarItem";
+export { type IconProps } from "./atoms/Icon/Icon";

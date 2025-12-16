@@ -1,4 +1,5 @@
 import type React from "react";
+import { Icon } from "@components/index";
 import "./Tile.css";
 
 type CommonProps = {
@@ -31,7 +32,7 @@ export default function Tile(props: TileProps) {
     title,
     description,
     className,
-    icon: Icon,
+    icon: IconTile,
     as = "div",
     ...rest
   } = props;
@@ -44,7 +45,7 @@ export default function Tile(props: TileProps) {
       <a className={mergedClassName} {...anchorProps}>
         <div className="tile__container">
           <div className="tile__icon">
-            <Icon />
+            <Icon icon={IconTile} size="lg" priority="high" />
           </div>
           <div className="flex flex-col p-md">
             <div className="text-hight-contrast font-weight-500">{title}</div>
@@ -59,7 +60,7 @@ export default function Tile(props: TileProps) {
       <div className={mergedClassName} {...divProps}>
         <div className="tile__container">
           <div className="tile__icon">
-            <Icon />
+            <Icon icon={IconTile} size="lg" priority="high" />
           </div>
           <div className="flex flex-col p-md">
             <div className="text-hight-contrast font-weight-500">{title}</div>

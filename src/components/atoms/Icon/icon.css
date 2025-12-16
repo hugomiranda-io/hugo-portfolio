@@ -1,0 +1,28 @@
+.icon {
+  & svg {
+    stroke-width: var(--icon-stroke-width);
+  }
+
+  &.icon-size--sm svg {
+    height: var(--size-md);
+    width: var(--size-md);
+  }
+  &.icon-size--md svg {
+    height: var(--size-xl);
+    width: var(--size-xl);
+  }
+  &.icon-size--lg svg {
+    height: var(--size-2xl);
+    width: var(--size-2xl);
+  }
+
+  &.icon-priority--low svg {
+    stroke: var(--color-icon-low-contrast);
+  }
+  &.icon-priority--high svg {
+    stroke: var(--color-icon-high-contrast);
+  }
+  &.icon-priority--theme svg {
+    stroke: var(--color-icon-theme);
+  }
+}

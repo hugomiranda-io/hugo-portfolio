@@ -33,11 +33,5 @@
 
   & .tile__icon {
     padding: var(--size-2xl) var(--size-md);
-
-    & svg {
-      height: var(--icon-lg);
-      width: var(--icon-lg);
-      stroke-width: var(--icon-stroke-width);
-    }
   }
 }

@@ -1,4 +1,5 @@
 import type React from "react";
+import { Icon } from "@components/index";
 import "./Cta.css";
 
 type CommonProps = {
@@ -44,14 +45,19 @@ export default function Cta(props: CtaProps) {
   const mergedClassName = ["btn", `btn-${variant}`, className]
     .filter(Boolean)
     .join(" ");
+  const iconClassName = variant === "primary" ? "theme" : "high";
 
   if (as === "a") {
     const { href, ...anchorProps } = rest as AnchorElementProps;
     return (
       <a className={mergedClassName} href={href} {...anchorProps}>
-        {LeftIcon ? <LeftIcon /> : null}
+        {LeftIcon ? (
+          <Icon icon={LeftIcon} size="sm" priority={iconClassName} />
+        ) : null}
         <span className="btn__label">{content}</span>
-        {RightIcon ? <RightIcon /> : null}
+        {RightIcon ? (
+          <Icon icon={RightIcon} size="sm" priority={iconClassName} />
+        ) : null}
       </a>
     );
   } else {
@@ -60,9 +66,13 @@ export default function Cta(props: CtaProps) {
 
     return (
       <button className={mergedClassName} type={type} {...buttonProps}>
-        {LeftIcon ? <LeftIcon /> : null}
+        {LeftIcon ? (
+          <Icon icon={LeftIcon} size="sm" priority={iconClassName} />
+        ) : null}
         <span className="btn__label">{content}</span>
-        {RightIcon ? <RightIcon /> : null}
+        {RightIcon ? (
+          <Icon icon={RightIcon} size="sm" priority={iconClassName} />
+        ) : null}
       </button>
     );
   }

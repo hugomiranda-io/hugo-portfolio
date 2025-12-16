@@ -1,5 +1,4 @@
-import Navbar from "../Navbar/Navbar";
-import NavbarItem, { type NavbarItemData } from "../Navbar/NavbarItem";
+import { Navbar, NavbarItem, type NavbarItemProps } from "@components/index";
 import "./Header.css";
 
 type HeaderProps = {
@@ -9,7 +8,7 @@ type HeaderProps = {
 export default function Header(props: HeaderProps) {
   const { currentPath } = props;
 
-  const navItems: NavbarItemData[] = [
+  const navItems: NavbarItemProps[] = [
     { href: "/", label: "Accueil", priority: "low" },
     { href: "/career", label: "Parcours", priority: "low" },
     { href: "#contact", label: "Contact", priority: "high" },

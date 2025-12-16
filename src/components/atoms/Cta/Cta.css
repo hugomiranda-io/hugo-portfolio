@@ -11,29 +11,15 @@
   &.btn-primary {
     color: var(--color-text-theme);
     background-color: var(--color-surface-solid);
-
-    & svg {
-      stroke: var(--color-icon-theme);
-    }
   }
 
   &.btn-soft {
     color: var(--color-text-hight-contrast);
     background-color: var(--color-ui);
-
-    & svg {
-      stroke: var(--color-icon-hight-contrast);
-    }
   }
 
   & .btn__label {
     padding-inline: var(--size-2xs);
-  }
-
-  & svg {
-    height: var(--icon-sm);
-    width: var(--icon-sm);
-    stroke-width: var(--icon-stroke-width);
   }
 
   &:hover {
