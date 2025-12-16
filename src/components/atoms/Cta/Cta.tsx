@@ -47,17 +47,23 @@ export default function Cta(props: CtaProps) {
     .join(" ");
   const iconClassName = variant === "primary" ? "theme" : "high";
 
+  const innerContent = (
+    <>
+      {LeftIcon ? (
+        <Icon icon={LeftIcon} size="sm" priority={iconClassName} />
+      ) : null}
+      <span className="btn__label">{content}</span>
+      {RightIcon ? (
+        <Icon icon={RightIcon} size="sm" priority={iconClassName} />
+      ) : null}
+    </>
+  );
+
   if (as === "a") {
     const { href, ...anchorProps } = rest as AnchorElementProps;
     return (
       <a className={mergedClassName} href={href} {...anchorProps}>
-        {LeftIcon ? (
-          <Icon icon={LeftIcon} size="sm" priority={iconClassName} />
-        ) : null}
-        <span className="btn__label">{content}</span>
-        {RightIcon ? (
-          <Icon icon={RightIcon} size="sm" priority={iconClassName} />
-        ) : null}
+        {innerContent}
       </a>
     );
   } else {
@@ -66,13 +72,7 @@ export default function Cta(props: CtaProps) {
 
     return (
       <button className={mergedClassName} type={type} {...buttonProps}>
-        {LeftIcon ? (
-          <Icon icon={LeftIcon} size="sm" priority={iconClassName} />
-        ) : null}
-        <span className="btn__label">{content}</span>
-        {RightIcon ? (
-          <Icon icon={RightIcon} size="sm" priority={iconClassName} />
-        ) : null}
+        {innerContent}
       </button>
     );
   }
