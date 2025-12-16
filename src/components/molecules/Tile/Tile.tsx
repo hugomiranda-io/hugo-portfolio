@@ -1,5 +1,5 @@
 import type React from "react";
-import { Icon } from "@components/index";
+import { Icon } from "@components";
 import "./Tile.css";
 
 type CommonProps = {

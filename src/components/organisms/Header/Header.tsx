@@ -1,4 +1,4 @@
-import { Navbar, NavbarItem, type NavbarItemProps } from "@components/index";
+import { Navbar, NavbarItem, type NavbarItemProps } from "@components";
 import "./Header.css";
 
 type HeaderProps = {

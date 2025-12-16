@@ -1,4 +1,4 @@
-import { Cta, Icon } from "@components/index";
+import { Cta, Icon } from "@components";
 import { Mail, Earth } from "lucide-react";
 import "./Footer.css";
 
