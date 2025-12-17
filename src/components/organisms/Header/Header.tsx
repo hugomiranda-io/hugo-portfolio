@@ -10,7 +10,7 @@ export default function Header(props: HeaderProps) {
 
   const navItems: NavbarItemProps[] = [
     { href: "/", label: "Accueil", priority: "low" },
-    { href: "/career", label: "Parcours", priority: "low" },
+    { href: "/profile", label: "Parcours", priority: "low" },
     { href: "#contact", label: "Contact", priority: "high" },
   ];
 
