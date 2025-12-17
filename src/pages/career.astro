@@ -1,11 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-
+import Layout from "../layouts/Layout.astro";
+import Accordion from "../components/molecules/Accordion/Accordion";
 ---
 
 <Layout>
 	<div class="flex flex-col gap-4xl">
-		Career
+		<Accordion client:load />
 	</div>
 </Layout>
