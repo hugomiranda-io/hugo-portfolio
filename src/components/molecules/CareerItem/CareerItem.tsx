@@ -6,20 +6,40 @@ import {
   AccordionTrigger as AccordionTriggerRadix,
   AccordionContent as AccordionContentRadix,
 } from "@radix-ui/react-accordion";
+import { ChevronDown } from "lucide-react";
+import { Icon } from "@components";
 
 type CareerItemProps = {
-  label: string;
+  startDate: number;
+  endDate: number;
+  post: string;
+  company: string;
+  location: string;
   children: React.ReactNode;
   value: number;
 };
 
 export default function CareerItem(props: CareerItemProps) {
-  const { label, children, value } = props;
+  const { startDate, endDate, post, company, location, children, value } =
+    props;
   return (
-    <AccordionItemRadix value={`item-` + value} className="accordion-item">
-      <AccordionHeaderRadix>
-        <AccordionTriggerRadix className="accordion-trigger">
-          {label}
+    <AccordionItemRadix value={`item-` + value} className="career-item">
+      <AccordionHeaderRadix className="career-item__header">
+        <AccordionTriggerRadix className="career-item__trigger">
+          <div className="career-item__dates">
+            <span>{startDate}</span>
+            <span>{endDate}</span>
+          </div>
+          <div className="career-item__details">
+            <span className="font-weight-500">{post}</span>
+            <div className="career-item__agency">
+              <span>{company}</span>
+              <span className="text-low-contrast">{location}</span>
+            </div>
+          </div>
+          <div className="career-item__icon">
+            <Icon icon={ChevronDown} size="md" priority="high" />
+          </div>
         </AccordionTriggerRadix>
       </AccordionHeaderRadix>
       <AccordionContentRadix className="accordion-content">

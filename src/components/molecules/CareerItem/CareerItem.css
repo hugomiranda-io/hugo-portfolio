@@ -1,0 +1,53 @@
+.career-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-md);
+  padding: var(--size-md);
+  border-radius: var(--radius-default);
+  transition: 0.2s;
+
+  & .career-item__trigger {
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--size-2xl);
+    width: 100%;
+
+    & .career-item__dates {
+      display: flex;
+      flex-direction: column;
+      color: var(--color-text-low-contrast);
+    }
+
+    & .career-item__details {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      & .career-item__agency {
+        display: flex;
+        flex-direction: row;
+        gap: var(--size-xs);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-surface-theme);
+    box-shadow: var(--shadow-sm);
+  }
+  &:focus-within {
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--focus);
+  }
+
+  &[data-state="open"] {
+    background-color: var(--color-surface-theme);
+    box-shadow: var(--shadow-md);
+  }
+  &[data-state="open"]:focus-within {
+    box-shadow: var(--shadow-md), var(--focus);
+  }
+}

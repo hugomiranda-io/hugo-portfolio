@@ -205,6 +205,8 @@
     --body-max-width: 720px;
     --body-margin: var(--size-xl);
     --body-gutter: var(--size-md);
+    /* FOCUS */
+    --focus: 0 0 0 var(--size-2xs) var(--color-primary-7);
     /* SHADOW */
     --shadow-sm: 0 0 2px -1px rgb(from var(--color-black) r g b / 10%),
       0 2px 4px 0 rgb(from var(--color-black) r g b / 6%);
