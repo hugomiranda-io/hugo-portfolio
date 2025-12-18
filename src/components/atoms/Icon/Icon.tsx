@@ -1,11 +1,5 @@
-import type React from "react";
+import type { IconProps } from "@types";
 import "./icon.css";
-
-export type IconProps = {
-  icon: React.ComponentType;
-  size: "sm" | "md" | "lg";
-  priority: "low" | "high" | "theme";
-};
 
 export default function Icon(props: IconProps) {
   const { icon: Icon, size, priority } = props;

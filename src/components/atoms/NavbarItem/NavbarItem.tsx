@@ -1,11 +1,5 @@
 import "./NavbarItem.css";
-
-export type NavbarItemProps = {
-  href: string;
-  priority: "low" | "high";
-  label: string;
-  active?: boolean;
-};
+import type { NavbarItemProps } from "@types";
 
 export default function NavbarItem(props: NavbarItemProps) {
   const { href, label, priority, active } = props;

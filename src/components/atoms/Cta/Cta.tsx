@@ -1,33 +1,7 @@
-import type React from "react";
 import { Icon } from "@components";
 import "./Cta.css";
-
-type CommonProps = {
-  label?: string;
-  children?: React.ReactNode;
-  variant?: "primary" | "soft";
-  leftIcon?: React.ComponentType;
-  rightIcon?: React.ComponentType;
-  className?: string;
-};
-
-type ButtonElementProps = {
-  as?: "button";
-  href?: never;
-} & Omit<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  "children" | "className"
->;
-
-type AnchorElementProps = {
-  as: "a";
-  href: string;
-} & Omit<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  "children" | "className" | "href"
->;
-
-type CtaProps = CommonProps & (ButtonElementProps | AnchorElementProps);
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import type { CtaProps } from "@types";
 
 export default function Cta(props: CtaProps) {
   const {
@@ -60,7 +34,9 @@ export default function Cta(props: CtaProps) {
   );
 
   if (as === "a") {
-    const { href, ...anchorProps } = rest as AnchorElementProps;
+    const { href, ...anchorProps } = rest as AnchorHTMLAttributes<
+      HTMLAnchorElement
+    > & { href: string };
     return (
       <a className={mergedClassName} href={href} {...anchorProps}>
         {innerContent}
@@ -68,7 +44,7 @@ export default function Cta(props: CtaProps) {
     );
   } else {
     const { type = "button", ...buttonProps } =
-      rest as React.ButtonHTMLAttributes<HTMLButtonElement>;
+      rest as ButtonHTMLAttributes<HTMLButtonElement>;
 
     return (
       <button className={mergedClassName} type={type} {...buttonProps}>

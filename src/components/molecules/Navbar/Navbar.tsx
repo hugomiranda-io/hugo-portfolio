@@ -1,8 +1,5 @@
 import "./Navbar.css";
-
-type NavbarProps = {
-  children: React.ReactNode;
-};
+import type { NavbarProps } from "@types";
 
 export default function Navbar(props: NavbarProps) {
   const { children } = props;
