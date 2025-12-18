@@ -9,9 +9,9 @@ export default function Timeline() {
         <Heading as="H3" label="Expériences" />
         <AccordionRadix type="single" collapsible className="timeline">
           <TimelineItem
-            type="career"
-            startDate={2019}
-            endDate={2025}
+            variant="career"
+            startPeriod={2019}
+            endPeriod={2025}
             title="Développeur Front-End & UI Designer"
             organization="Aliznet"
             location="Neuilly-sur-Seine, France"
@@ -21,9 +21,9 @@ export default function Timeline() {
           </TimelineItem>
 
           <TimelineItem
-            type="career"
-            startDate={2019}
-            endDate={2019}
+            variant="career"
+            startPeriod={2019}
+            endPeriod={2019}
             title="Développeur web & UI Designer"
             organization="Skapa"
             location="Paris, France"
@@ -33,9 +33,9 @@ export default function Timeline() {
           </TimelineItem>
 
           <TimelineItem
-            type="career"
-            startDate={2015}
-            endDate={2019}
+            variant="career"
+            startPeriod={2015}
+            endPeriod={2019}
             title="Collaborateur polyvalent"
             organization="U Express"
             location="Vincennes, France"
@@ -49,15 +49,15 @@ export default function Timeline() {
       <div className="flex flex-col gap-lg">
         <Heading as="H3" label="Formations" />
         <TimelineItem
-          type="education"
-          endDate={2008}
+          variant="education"
+          endPeriod={2008}
           title="Licence Technologies et design de multimédia"
           organization="Instituto Politecnico de Viseu"
           location="Viseu, Portugal"
         />
         <TimelineItem
-          type="education"
-          endDate={2019}
+          variant="education"
+          endPeriod={2019}
           title="Formation - Développeur intégrateur web"
           organization="IFOCOP"
           location="Paris, France"

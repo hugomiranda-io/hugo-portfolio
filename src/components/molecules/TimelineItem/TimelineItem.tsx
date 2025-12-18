@@ -1,4 +1,3 @@
-import type React from "react";
 import "./TimelineItem.css";
 import {
   AccordionItem as AccordionItemRadix,
@@ -7,38 +6,14 @@ import {
 } from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 import { Icon } from "@components";
-
-type CommonProps = {
-  title: string;
-  organization: string;
-  location: string;
-};
-
-type CareerElementProps = {
-  type: "career";
-  startDate: number;
-  endDate: number;
-  children: React.ReactNode;
-  value: number;
-};
-
-type EducationElementProps = {
-  type: "education";
-  startDate?: never;
-  endDate: number;
-  children?: never;
-  value?: never;
-};
-
-export type TimelineItemProps = CommonProps &
-  (CareerElementProps | EducationElementProps);
+import type { TimelineItemProps } from "@types";
 
 export default function TimelineItem(props: TimelineItemProps) {
-  if (props.type === "career") {
+  if (props.variant === "career") {
     const {
-      type,
-      startDate,
-      endDate,
+      variant,
+      startPeriod,
+      endPeriod,
       title,
       organization,
       location,
@@ -49,12 +24,12 @@ export default function TimelineItem(props: TimelineItemProps) {
     return (
       <AccordionItemRadix
         value={`item-` + value}
-        className={`timeline-item timeline-item--${type}`}
+        className={`timeline-item timeline-item--${variant}`}
       >
         <AccordionTriggerRadix className="timeline-item__trigger">
-          <div className="timeline-item__dates">
-            <span>{startDate}</span>
-            <span>{endDate}</span>
+          <div className="timeline-item__period">
+            <span>{startPeriod}</span>
+            <span>{endPeriod}</span>
           </div>
           <div className="timeline-item__details">
             <span className="font-weight-500">{title}</span>
@@ -73,13 +48,13 @@ export default function TimelineItem(props: TimelineItemProps) {
       </AccordionItemRadix>
     );
   } else {
-    const { type, endDate, title, organization, location } = props;
+    const { variant, endPeriod, title, organization, location } = props;
 
     return (
-      <div className={`timeline-item timeline-item--${type}`}>
+      <div className={`timeline-item timeline-item--${variant}`}>
         <div className="timeline-item__trigger">
-          <div className="timeline-item__dates">
-            <span>{endDate}</span>
+          <div className="timeline-item__period">
+            <span>{endPeriod}</span>
           </div>
           <div className="timeline-item__details">
             <span className="font-weight-500">{title}</span>

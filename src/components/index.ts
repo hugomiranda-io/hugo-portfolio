@@ -16,4 +16,3 @@ export { default as Header } from "./organisms/Header/Header";
 // -- TYPES --
 export { type NavbarItemProps } from "./atoms/NavbarItem/NavbarItem";
 export { type IconProps } from "./atoms/Icon/Icon";
-export { type TimelineItemProps } from "./molecules/TimelineItem/TimelineItem";
