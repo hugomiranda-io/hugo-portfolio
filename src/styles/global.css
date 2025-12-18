@@ -756,8 +756,7 @@
     color: var(--color-text-hight-contrast);
   }
 
-  .heading {
-    font-weight: 500;
-    line-height: var(--leading-snug);
+  .text-theme {
+    color: var(--color-text-theme);
   }
 }

@@ -1,4 +1,4 @@
-.career {
+.timeline {
   display: flex;
   flex-direction: column;
   gap: var(--size-md);
