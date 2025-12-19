@@ -1,7 +1,7 @@
 ---
 import { Tile } from '@components';
 import Layout from '@layouts/Layout.astro';
-import { Handshake, Blocks, Ear, Code, Component, ScrollText, Github, Figma, Dribbble } from 'lucide-react';
+import { KEYHIGHLIGHTS_DATA, KEYSOCIALS_DATA } from '@data';
 
 
 ---
@@ -24,22 +24,15 @@ import { Handshake, Blocks, Ear, Code, Component, ScrollText, Github, Figma, Dri
 		</div>
 		<div class="flex flex-col gap-md">
 			<div class="container-grid">
-				<Tile title='+5 Ans' description='Expérience' icon={Handshake}></Tile>
-				<Tile title='Design & Code' description='Double compétence' icon={Blocks}></Tile>
-				<Tile title="À l'écoute" description='Disponibilité' icon={Ear}></Tile>
-			</div>
-			<div class="container-grid">
-				<Tile title='Stack JS' description='Front-end' icon={Code}></Tile>
-				<Tile title="Figma" description='Ui design' icon={Component}></Tile>
-				<Tile as="a" href="#" title='Parcours' description='En savoir plus' icon={ScrollText}></Tile>
+				{KEYHIGHLIGHTS_DATA.map((item) => (
+					<Tile {...item} />
+				))}
 			</div>
 		</div>
 		<div class="flex flex-col gap-lg">
 			<h3 class="heading">Mes profils</h3>
-						<div class="container-grid">
-				<Tile as="a" href="#" title='Github' description='Mes projets' icon={Github}></Tile>
-				<Tile as="a" href="#" title='Figma' description='Ma page community' icon={Figma}></Tile>
-				<Tile as="a" href="#" title="Dribbble" description='Mes créations' icon={Dribbble}></Tile>
+			<div class="container-grid">
+				{KEYSOCIALS_DATA.map((item)=>(<Tile target="_blank" {...item}/>))}
 			</div>
 		</div>
 	</div>

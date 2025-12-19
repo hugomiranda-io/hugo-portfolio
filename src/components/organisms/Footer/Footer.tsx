@@ -1,6 +1,7 @@
 import { Cta, Icon } from "@components";
 import { Mail, Earth } from "lucide-react";
 import "./Footer.css";
+import { FOOTERSOCIALS_DATA } from "@data";
 
 export default function Footer() {
   return (
@@ -27,11 +28,9 @@ export default function Footer() {
             <h4 className="heading">Présence en ligne</h4>
           </div>
           <div className="contact-card__body ">
-            <Cta as="a" href="#" variant="soft" label="LinkedIn" />
-            <Cta as="a" href="#" variant="soft" label="Github" />
-            <Cta as="a" href="#" variant="soft" label="Figma" />
-            <Cta as="a" href="#" variant="soft" label="Dribbble" />
-            <Cta as="a" href="#" variant="soft" label="Instagram" />
+            {FOOTERSOCIALS_DATA.map((item) => (
+              <Cta variant="soft" target="_blank" {...item} />
+            ))}
           </div>
         </div>
       </div>
