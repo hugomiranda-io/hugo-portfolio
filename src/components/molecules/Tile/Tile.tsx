@@ -1,31 +1,7 @@
-import type React from "react";
 import { Icon } from "@components";
 import "./Tile.css";
-
-type CommonProps = {
-  title: string;
-  description?: string;
-  className?: string;
-  icon: React.ComponentType;
-};
-
-type AnchorTileElementProps = {
-  as?: "a";
-  href?: string;
-} & Omit<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  "children" | "className" | "href"
->;
-
-type DivElementProps = {
-  as?: "div";
-  href?: never;
-} & Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  "children" | "className" | "href"
->;
-
-type TileProps = CommonProps & (AnchorTileElementProps | DivElementProps);
+import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
+import type { TileProps } from "@types";
 
 export default function Tile(props: TileProps) {
   const {
@@ -52,14 +28,16 @@ export default function Tile(props: TileProps) {
   );
 
   if (as === "a") {
-    const anchorProps = rest as AnchorTileElementProps;
+    const anchorProps = rest as AnchorHTMLAttributes<HTMLAnchorElement> & {
+      href?: string;
+    };
     return (
       <a className={mergedClassName} {...anchorProps}>
         {innerContent}
       </a>
     );
   } else {
-    const divProps = rest as DivElementProps;
+    const divProps = rest as HTMLAttributes<HTMLDivElement>;
     return (
       <div className={mergedClassName} {...divProps}>
         {innerContent}

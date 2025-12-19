@@ -1,10 +1,5 @@
+import type { HeadingProps } from "@types";
 import "./Heading.css";
-
-type HeadingProps = {
-  as: "H1" | "H2" | "H3" | "H4" | "H5" | "H6" | "Paragraph";
-  label: string;
-  contrast?: "low" | "high";
-};
 
 export default function Heading(props: HeadingProps) {
   const { as, label, contrast = "high" } = props;

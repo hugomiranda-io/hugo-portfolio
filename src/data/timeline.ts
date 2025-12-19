@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 import type { TimelineItemProps } from "@types";
 
-export type CareerTimelineItemData = Omit<
+type CareerTimelineItemData = Omit<
   Extract<TimelineItemProps, { variant: "career" }>,
   "children"
 > & { content: ReactNode };
 
-export type EducationTimelineItemData = Extract<
+type EducationTimelineItemData = Extract<
   TimelineItemProps,
   { variant: "education" }
 >;
