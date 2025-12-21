@@ -29,7 +29,12 @@ export default function Footer() {
           </div>
           <div className="contact-card__body ">
             {FOOTERSOCIALS_DATA.map((item) => (
-              <Cta variant="soft" target="_blank" {...item} />
+              <Cta
+                key={"button-" + item.label}
+                variant="soft"
+                target="_blank"
+                {...item}
+              />
             ))}
           </div>
         </div>

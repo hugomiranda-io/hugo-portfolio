@@ -1,7 +1,7 @@
 import "./Timeline.css";
 import { TimelineItem, Heading } from "@components";
-import { Accordion as AccordionRadix } from "@radix-ui/react-accordion";
 import { TIMELINE_DATA } from "@data";
+import { Accordion as AccordionRadix } from "@radix-ui/react-accordion";
 
 export default function Timeline() {
   return (

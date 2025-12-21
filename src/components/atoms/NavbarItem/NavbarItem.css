@@ -10,11 +10,11 @@
   transition: 0.2s;
 
   &:hover {
-    color: var(--color-text-hight-contrast);
+    color: var(--color-text-high-contrast);
   }
 
   &.navbar__item--active {
-    color: var(--color-text-hight-contrast);
+    color: var(--color-text-high-contrast);
     background-color: var(--color-surface-subtle);
   }
 

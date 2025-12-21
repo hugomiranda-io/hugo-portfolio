@@ -14,7 +14,7 @@
   }
 
   &.btn-soft {
-    color: var(--color-text-hight-contrast);
+    color: var(--color-text-high-contrast);
     background-color: var(--color-ui);
   }
 

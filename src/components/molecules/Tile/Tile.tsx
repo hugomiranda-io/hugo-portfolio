@@ -21,7 +21,7 @@ export default function Tile(props: TileProps) {
         <Icon icon={IconTile} size="lg" priority="high" />
       </div>
       <div className="flex flex-col p-md">
-        <div className="text-hight-contrast font-weight-500">{title}</div>
+        <div className="text-high-contrast font-weight-500">{title}</div>
         <div className="text-low-contrast">{description}</div>
       </div>
     </div>

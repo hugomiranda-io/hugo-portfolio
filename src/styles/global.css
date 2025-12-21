@@ -189,7 +189,7 @@
     --color-border: var(--color-neutral-7);
     --color-border-hover: var(--color-neutral-8);
     --color-text-low-contrast: var(--color-neutral-11);
-    --color-text-hight-contrast: var(--color-neutral-12);
+    --color-text-high-contrast: var(--color-neutral-12);
     --color-text-theme: var(--color-neutral-1);
     --color-icon-low-contrast: var(--color-neutral-11);
     --color-icon-high-contrast: var(--color-neutral-12);
@@ -202,9 +202,12 @@
     --leading-snug: 1.375;
     --leading-relaxed: 1.625;
     /* RESPONSIVE */
-    --body-max-width: 720px;
+    --body-max-width: 100%;
     --body-margin: var(--size-xl);
     --body-gutter: var(--size-md);
+    @media (width >= 704px) {
+      --body-max-width: 720px;
+    }
     /* FOCUS */
     --focus: 0 0 0 var(--size-2xs) var(--color-primary-7);
     /* SHADOW */
@@ -752,8 +755,8 @@
     color: var(--color-text-low-contrast);
   }
 
-  .text-hight-contrast {
-    color: var(--color-text-hight-contrast);
+  .text-high-contrast {
+    color: var(--color-text-high-contrast);
   }
 
   .text-theme {

@@ -11,3 +11,4 @@ export { default as TimelineItem } from "./molecules/TimelineItem/TimelineItem";
 export { default as Timeline } from "./organisms/Timeline/Timeline";
 export { default as Footer } from "./organisms/Footer/Footer";
 export { default as Header } from "./organisms/Header/Header";
+export { default as Hero } from "./organisms/Hero/Hero";
