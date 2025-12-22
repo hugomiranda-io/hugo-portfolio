@@ -15,3 +15,4 @@ export type { TileProps } from "./tile";
 export type { NavbarProps } from "./navbar";
 
 // Organisms
+export type { HeroProps } from "./hero";
