@@ -10,10 +10,12 @@ export default function Header(props: HeaderProps) {
  const { currentPath } = props;
 
  return (
-  <Navbar>
-   {NAVBAR_DATA.map((item) => (
-    <NavbarItem key={item.href} {...item} active={item.href === currentPath} />
-   ))}
-  </Navbar>
+  <div className="header">
+   <Navbar>
+    {NAVBAR_DATA.map((item) => (
+     <NavbarItem key={item.href} {...item} active={item.href === currentPath} />
+    ))}
+   </Navbar>
+  </div>
  );
 }

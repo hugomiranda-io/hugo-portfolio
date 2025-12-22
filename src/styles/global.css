@@ -272,6 +272,23 @@
 }
 
 @layer utilities {
+ /* POSITION */
+ .absolute {
+  position: absolute;
+ }
+
+ .relative {
+  position: relative;
+ }
+
+ .static {
+  position: static;
+ }
+
+ .sticky {
+  position: sticky;
+ }
+
  /* FLEX */
  .flex {
   display: flex;

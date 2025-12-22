@@ -1,0 +1,8 @@
+.header {
+ position: sticky;
+ top: var(--size-2xl);
+ display: flex;
+ justify-content: center;
+ margin-inline: auto;
+ max-width: var(--body-max-width);
+}

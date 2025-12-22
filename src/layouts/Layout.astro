@@ -15,9 +15,7 @@ const currentPath = Astro.url.pathname;
   <title>Hugo Miranda - Portfolio</title>
  </head>
  <body class="surface-app">
-  <header class="container-app mx-auto flex justify-center pt-2xl">
-   <Header currentPath={currentPath} />
-  </header>
+  <Header currentPath={currentPath} />
   <main class="container-app mx-auto pt-4xl pb-3xl">
    <slot />
   </main>
