@@ -8,21 +8,16 @@ const isDev = process.argv.includes("dev");
 
 // https://astro.build/config
 export default defineConfig({
-  build: {
-    inlineStylesheets: "never",
+ build: {
+  inlineStylesheets: "never",
+ },
+ integrations: [react()],
+ vite: {
+  resolve: {
+   dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
-  integrations: [react()],
-  vite: {
-    resolve: {
-      dedupe: [
-        "react",
-        "react-dom",
-        "react/jsx-runtime",
-        "react/jsx-dev-runtime",
-      ],
-    },
-    define: {
-      "process.env.NODE_ENV": JSON.stringify(isDev ? "development" : "production"),
-    },
+  define: {
+   "process.env.NODE_ENV": JSON.stringify(isDev ? "development" : "production"),
   },
+ },
 });

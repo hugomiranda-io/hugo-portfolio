@@ -1,36 +1,36 @@
 .btn {
-  all: unset;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--size-2xs);
-  padding-inline: var(--size-sm);
-  min-height: 2.5rem;
-  border-radius: var(--radius-default);
+ all: unset;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: var(--size-2xs);
+ padding-inline: var(--size-sm);
+ min-height: 2.5rem;
+ border-radius: var(--radius-default);
+
+ &.btn-primary {
+  color: var(--color-text-theme);
+  background-color: var(--color-surface-solid);
+ }
+
+ &.btn-soft {
+  color: var(--color-text-high-contrast);
+  background-color: var(--color-ui);
+ }
+
+ & .btn__label {
+  padding-inline: var(--size-2xs);
+ }
+
+ &:hover {
+  cursor: pointer;
 
   &.btn-primary {
-    color: var(--color-text-theme);
-    background-color: var(--color-surface-solid);
+   background-color: var(--color-surface-solid-hover);
   }
 
   &.btn-soft {
-    color: var(--color-text-high-contrast);
-    background-color: var(--color-ui);
+   background-color: var(--color-ui-hover);
   }
-
-  & .btn__label {
-    padding-inline: var(--size-2xs);
-  }
-
-  &:hover {
-    cursor: pointer;
-
-    &.btn-primary {
-      background-color: var(--color-surface-solid-hover);
-    }
-
-    &.btn-soft {
-      background-color: var(--color-ui-hover);
-    }
-  }
+ }
 }

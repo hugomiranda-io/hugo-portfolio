@@ -1,5 +1,5 @@
 .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-md);
+ display: flex;
+ flex-direction: column;
+ gap: var(--size-md);
 }

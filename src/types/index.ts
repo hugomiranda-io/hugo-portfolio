@@ -6,10 +6,10 @@ export type { HeadingProps } from "./heading";
 
 // Molecules
 export type {
-  CareerElementProps,
-  CommonProps,
-  EducationElementProps,
-  TimelineItemProps,
+ CareerElementProps,
+ CommonProps,
+ EducationElementProps,
+ TimelineItemProps,
 } from "./timelineItem";
 export type { TileProps } from "./tile";
 export type { NavbarProps } from "./navbar";

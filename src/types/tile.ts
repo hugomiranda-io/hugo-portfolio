@@ -1,28 +1,20 @@
-import type {
-  AnchorHTMLAttributes,
-  ComponentType,
-  HTMLAttributes,
-} from "react";
+import type { AnchorHTMLAttributes, ComponentType, HTMLAttributes } from "react";
 
 type CommonProps = {
-  title: string;
-  description?: string;
-  className?: string;
-  icon: ComponentType;
+ title: string;
+ description?: string;
+ className?: string;
+ icon: ComponentType;
 };
 
 type AnchorTileElementProps = {
-  as?: "a";
-  href?: string;
-} & Omit<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  "children" | "className" | "href"
->;
+ as?: "a";
+ href?: string;
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children" | "className" | "href">;
 
 type DivElementProps = {
-  as?: "div";
-  href?: never;
+ as?: "div";
+ href?: never;
 } & Omit<HTMLAttributes<HTMLDivElement>, "children" | "className" | "href">;
 
-export type TileProps = CommonProps &
-  (AnchorTileElementProps | DivElementProps);
+export type TileProps = CommonProps & (AnchorTileElementProps | DivElementProps);
