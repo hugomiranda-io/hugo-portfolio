@@ -1,18 +1,45 @@
 import "./Timeline.css";
+
 import { Accordion as AccordionRadix } from "@radix-ui/react-accordion";
 
-import { TimelineItem, Heading } from "@components";
-import { TIMELINE_DATA } from "@data";
+import { Heading, TimelineItem } from "@components";
 
-export default function Timeline() {
+import type { TimelineItemProps } from "@types";
+import type { ReactNode } from "react";
+
+type CareerTimelineItem = Omit<Extract<TimelineItemProps, { variant: "career" }>, "children"> & {
+ contentHtml?: string;
+ content?: ReactNode;
+ attributions?: string[];
+ stack?: string[];
+};
+
+type EducationTimelineItem = Extract<TimelineItemProps, { variant: "education" }>;
+
+type TimelineProps = {
+ career: CareerTimelineItem[];
+ education: EducationTimelineItem[];
+};
+
+export default function Timeline({ career, education }: TimelineProps) {
+ const careerItems = career;
+ const educationItems = education;
+
  return (
   <>
    <div className="flex flex-col gap-lg">
     <Heading as="H3" label="Expériences" />
     <AccordionRadix type="single" collapsible className="timeline">
-     {TIMELINE_DATA.career.map(({ content, ...item }) => (
+     {careerItems.map(({ contentHtml, content, ...item }) => (
       <TimelineItem key={item.organization} {...item}>
-       {content}
+       {contentHtml ? (
+        <div
+         className="timeline-item__markdown"
+         dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
+       ) : (
+        content
+       )}
       </TimelineItem>
      ))}
     </AccordionRadix>
@@ -20,7 +47,7 @@ export default function Timeline() {
 
    <div className="flex flex-col gap-lg">
     <Heading as="H3" label="Formations" />
-    {TIMELINE_DATA.education.map((item) => (
+    {educationItems.map((item) => (
      <TimelineItem key={item.organization} {...item} />
     ))}
    </div>

@@ -11,7 +11,6 @@ export type CareerElementProps = {
  startPeriod: number;
  endPeriod: number;
  children: ReactNode;
- value: number;
 };
 
 export type EducationElementProps = {

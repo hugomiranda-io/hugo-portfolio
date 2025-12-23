@@ -1,10 +1,45 @@
 ---
+import { createMarkdownProcessor } from "@astrojs/markdown-remark";
+import { getCollection } from "astro:content";
+
 import { Timeline } from "@components";
 import Layout from "@layouts/Layout.astro";
+
+const timelineEntries = await getCollection("timeline");
+const markdown = await createMarkdownProcessor();
+
+type TimelineEntry = (typeof timelineEntries)[number];
+
+function isCareerEntry(entry: TimelineEntry): entry is TimelineEntry & {
+ data: TimelineEntry["data"] & { variant: "career"; startPeriod: number; endPeriod: number };
+} {
+ return entry.data.variant === "career";
+}
+
+function isEducationEntry(entry: TimelineEntry): entry is TimelineEntry & {
+ data: TimelineEntry["data"] & { variant: "education"; endPeriod: number };
+} {
+ return entry.data.variant === "education";
+}
+
+const career = await Promise.all(
+ timelineEntries
+  .filter(isCareerEntry)
+  .sort((a, b) => b.data.startPeriod - a.data.startPeriod)
+  .map(async (entry) => {
+   const { code } = await markdown.render(entry.body ?? "");
+   return { ...entry.data, contentHtml: code };
+  }),
+);
+
+const education = timelineEntries
+ .filter(isEducationEntry)
+ .sort((a, b) => b.data.endPeriod - a.data.endPeriod)
+ .map((entry) => entry.data);
 ---
 
 <Layout>
  <div class="flex flex-col gap-4xl">
-  <Timeline client:load />
+  <Timeline client:load career={career} education={education} />
  </div>
 </Layout>

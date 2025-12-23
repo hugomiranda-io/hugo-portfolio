@@ -13,6 +13,7 @@
     "format:check": "prettier . --check"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "6.3.10",
     "@astrojs/react": "^4.4.2",
     "@radix-ui/react-accordion": "^1.2.12",
     "@types/react": "^19.2.7",

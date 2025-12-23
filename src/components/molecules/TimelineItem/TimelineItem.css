@@ -76,6 +76,57 @@
    animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
   }
  }
+
+ & .timeline-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2xl);
+ }
+
+ & .timeline-item__markdown > * + * {
+  margin-top: var(--size-lg);
+ }
+
+ & .timeline-item__markdown p {
+  margin: 0;
+ }
+
+ & .timeline-item__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-md);
+ }
+
+ & .timeline-item__section-title {
+  margin: 0;
+  font-weight: 500;
+ }
+
+ & .timeline-item__list {
+  margin: 0;
+  padding-left: var(--size-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm);
+ }
+
+ & .timeline-item__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-sm);
+ }
+
+ & .timeline-item__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--size-2xs) var(--size-sm);
+  border-radius: var(--radius-rounded);
+  border: var(--border-width) solid var(--color-border-subtle);
+  color: var(--color-text-low-contrast);
+  font-size: 0.875rem;
+  line-height: var(--leading-snug);
+  background-color: transparent;
+ }
 }
 
 @keyframes slideDown {
