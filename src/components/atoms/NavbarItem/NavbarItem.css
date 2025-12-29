@@ -4,7 +4,7 @@
  justify-content: center;
  padding: var(--size-2xs) var(--size-md);
  min-height: 2.5rem;
- font-size: 0.875rem;
+ font-size: var(--font-size-xs);
  border-radius: var(--radius-rounded);
  color: var(--color-text-low-contrast);
  transition: 0.2s;

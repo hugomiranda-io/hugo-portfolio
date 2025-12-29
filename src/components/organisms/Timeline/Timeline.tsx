@@ -2,7 +2,7 @@ import "./Timeline.css";
 
 import { Accordion as AccordionRadix } from "@radix-ui/react-accordion";
 
-import { Heading, TimelineItem } from "@components";
+import { Heading, MarkdownContent, TimelineItem } from "@components";
 
 import type { TimelineItemProps } from "@types";
 import type { ReactNode } from "react";
@@ -32,14 +32,7 @@ export default function Timeline({ career, education }: TimelineProps) {
     <AccordionRadix type="single" collapsible className="timeline">
      {careerItems.map(({ contentHtml, content, ...item }) => (
       <TimelineItem key={item.organization} {...item}>
-       {contentHtml ? (
-        <div
-         className="timeline-item__markdown"
-         dangerouslySetInnerHTML={{ __html: contentHtml }}
-        />
-       ) : (
-        content
-       )}
+       {contentHtml ? <MarkdownContent contentHtml={contentHtml} /> : content}
       </TimelineItem>
      ))}
     </AccordionRadix>
