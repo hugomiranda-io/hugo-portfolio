@@ -10,8 +10,6 @@ import type { ReactNode } from "react";
 type CareerTimelineItem = Omit<Extract<TimelineItemProps, { variant: "career" }>, "children"> & {
  contentHtml?: string;
  content?: ReactNode;
- attributions?: string[];
- stack?: string[];
 };
 
 type EducationTimelineItem = Extract<TimelineItemProps, { variant: "education" }>;

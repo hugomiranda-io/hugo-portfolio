@@ -387,9 +387,12 @@
  /* GRID */
  .container-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: var(--body-gutter);
+  @media (width >= 704px) {
+   grid-template-columns: repeat(12, 1fr);
+  }
  }
 
  .grid-col-1 {

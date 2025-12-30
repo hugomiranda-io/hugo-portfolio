@@ -1,12 +1,16 @@
 .contact-card {
  display: flex;
  flex-direction: column;
- grid-column: span 6 / span 6;
+ grid-column: span 4 / span 4;
  gap: var(--size-lg);
  padding: var(--size-3xl);
  background-color: var(--color-surface-theme);
  border-radius: var(--radius-default);
  box-shadow: var(--shadow-sm);
+
+ @media (width >= 704px) {
+  grid-column: span 6 / span 6;
+ }
 
  & .contact-card__header {
   display: flex;

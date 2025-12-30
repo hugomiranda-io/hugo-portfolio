@@ -1,5 +1,6 @@
 import type { TileProps } from "./tile";
 
-export type KeyHighlightsProps = {
+export type TileGroupProps = {
  data: TileProps[];
+ title?: string;
 };
