@@ -1,5 +1,5 @@
 ---
-import { Hero, Tile } from "@components";
+import { Hero, KeyHighlights, Tile } from "@components";
 import { KEYHIGHLIGHTS_DATA, KEYSOCIALS_DATA } from "@data";
 import Layout from "@layouts/Layout.astro";
 ---
@@ -7,11 +7,9 @@ import Layout from "@layouts/Layout.astro";
 <Layout>
  <div class="flex flex-col gap-4xl">
   <Hero />
-  <div class="flex flex-col gap-md">
-   <div class="container-grid">
-    {KEYHIGHLIGHTS_DATA.map((item) => <Tile {...item} />)}
-   </div>
-  </div>
+
+  <KeyHighlights data={KEYHIGHLIGHTS_DATA} />
+
   <div class="flex flex-col gap-lg">
    <h3 class="heading">Mes profils</h3>
    <div class="container-grid">
