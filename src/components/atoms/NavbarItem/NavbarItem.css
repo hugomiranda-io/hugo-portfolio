@@ -14,12 +14,12 @@
  }
 
  &.navbar__item--active {
-  color: var(--color-text-high-contrast);
-  background-color: var(--color-surface-subtle);
+  color: var(--color-text-theme);
+  background-color: var(--color-neutral-13);
  }
 
  &.navbar__item--solid {
-  color: var(--color-text-theme);
-  background-color: var(--color-neutral-13);
+  color: var(--color-text-high-contrast);
+  background-color: var(--color-surface-subtle);
  }
 }
