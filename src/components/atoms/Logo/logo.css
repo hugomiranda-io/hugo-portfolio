@@ -1,0 +1,37 @@
+.logo {
+ &.logo-size--sm {
+  height: var(--size-md);
+  width: var(--size-md);
+ }
+ &.logo-size--md {
+  height: var(--size-xl);
+  width: var(--size-xl);
+ }
+ &.logo-size--lg {
+  height: var(--size-2xl);
+  width: var(--size-2xl);
+ }
+
+ &.logo-size--xl {
+  height: var(--size-3xl);
+  width: var(--size-3xl);
+ }
+
+ &.logo-color--light {
+  & .bg {
+   fill: var(--color-ui);
+  }
+  & .path {
+   fill: var(--color-icon-high-contrast);
+  }
+ }
+
+ &.logo-color--dark {
+  & .bg {
+   fill: var(--color-surface-opposite-theme);
+  }
+  & .path {
+   fill: var(--color-surface-app);
+  }
+ }
+}

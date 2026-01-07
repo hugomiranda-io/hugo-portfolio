@@ -1,6 +1,6 @@
 import { Mail, Earth } from "lucide-react";
 
-import { Cta, Icon } from "@components";
+import { Cta, Icon, Logo } from "@components";
 import "./Footer.css";
 import { FOOTERSOCIALS_DATA } from "@data";
 
@@ -34,6 +34,9 @@ export default function Footer() {
       ))}
      </div>
     </div>
+   </div>
+   <div className="container-app mx-auto flex justify-center pt-3xl">
+    <Logo color="dark" size="lg" />
    </div>
   </footer>
  );
