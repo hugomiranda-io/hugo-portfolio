@@ -8,7 +8,7 @@ export const KEYSOCIALS_DATA: TileProps[] = [
   externalLink: true,
   href: "https://github.com/hugocsmiranda",
   title: "Github",
-  description: "Mes projets",
+  description: "Projets",
   icon: Github,
  },
  {
@@ -16,7 +16,7 @@ export const KEYSOCIALS_DATA: TileProps[] = [
   externalLink: true,
   href: "https://www.figma.com/@hugomiranda",
   title: "Figma",
-  description: "Ma page community",
+  description: "Community page",
   icon: Figma,
  },
  {
@@ -24,7 +24,7 @@ export const KEYSOCIALS_DATA: TileProps[] = [
   externalLink: true,
   href: "https://dribbble.com/hugocsmiranda",
   title: "Dribbble",
-  description: "Mes créations",
+  description: "Créations",
   icon: Dribbble,
  },
 ];

@@ -10,7 +10,7 @@ export const KEYHIGHLIGHTS_DATA: TileProps[] = [
  },
  {
   title: "Design & Code",
-  description: "Double compétence",
+  description: "Compétence",
   icon: Blocks,
  },
  {
