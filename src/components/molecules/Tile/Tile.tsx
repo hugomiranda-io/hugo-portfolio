@@ -12,8 +12,15 @@ function mergeExternalRel(rel?: string) {
 }
 
 export default function Tile(props: TileProps) {
- const { title, description, className, icon: IconTile, as = "div", externalLink = false, ...rest } =
-  props;
+ const {
+  title,
+  description,
+  className,
+  icon: IconTile,
+  as = "div",
+  externalLink = false,
+  ...rest
+ } = props;
 
  const mergedClassName = ["tile", className].filter(Boolean).join(" ");
 
@@ -31,7 +38,7 @@ export default function Tile(props: TileProps) {
 
  if (as === "a") {
   const { rel, target, ...anchorProps } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & {
-   href?: string;
+   href: string;
    rel?: string;
    target?: string;
   };

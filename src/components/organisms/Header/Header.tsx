@@ -36,9 +36,7 @@ export default function Header(props: HeaderProps) {
      <NavbarItem
       key={item.href}
       {...item}
-      active={
-       item.href.startsWith("/") && normalizePathname(item.href) === normalizedCurrentPath
-      }
+      active={item.href.startsWith("/") && normalizePathname(item.href) === normalizedCurrentPath}
      />
     ))}
    </Navbar>

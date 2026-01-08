@@ -12,13 +12,13 @@ import type { TimelineItemProps } from "@types";
 
 export default function TimelineItem(props: TimelineItemProps) {
  if (props.variant === "career") {
-  const { variant, startPeriod, endPeriod, title, organization, location, children } = props;
+  const { id, variant, startPeriod, endPeriod, title, organization, location, children } = props;
+  const accordionValue = id
+   ? `item-${id}`
+   : `item-${organization}-${title}-${startPeriod}-${endPeriod}`;
 
   return (
-   <AccordionItemRadix
-    value={`item-` + startPeriod + endPeriod}
-    className={`timeline-item timeline-item--${variant}`}
-   >
+   <AccordionItemRadix value={accordionValue} className={`timeline-item timeline-item--${variant}`}>
     <AccordionTriggerRadix className="timeline-item__trigger">
      <div className="timeline-item__period">
       <span>{startPeriod}</span>

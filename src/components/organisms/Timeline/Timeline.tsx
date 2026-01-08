@@ -29,7 +29,10 @@ export default function Timeline({ career, education }: TimelineProps) {
     <Heading as="H3" label="Expériences" />
     <AccordionRadix type="single" collapsible className="timeline">
      {careerItems.map(({ contentHtml, content, ...item }) => (
-      <TimelineItem key={item.organization} {...item}>
+      <TimelineItem
+       key={item.id ?? `${item.organization}-${item.title}-${item.startPeriod}-${item.endPeriod}`}
+       {...item}
+      >
        {contentHtml ? <MarkdownContent contentHtml={contentHtml} /> : content}
       </TimelineItem>
      ))}
@@ -39,7 +42,10 @@ export default function Timeline({ career, education }: TimelineProps) {
    <div className="flex flex-col gap-lg">
     <Heading as="H3" label="Formations" />
     {educationItems.map((item) => (
-     <TimelineItem key={item.organization} {...item} />
+     <TimelineItem
+      key={item.id ?? `${item.organization}-${item.title}-${item.endPeriod}`}
+      {...item}
+     />
     ))}
    </div>
   </>

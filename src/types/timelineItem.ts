@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 export type CommonProps = {
+ id?: string;
  title: string;
  organization: string;
  location: string;

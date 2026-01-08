@@ -15,13 +15,13 @@ export default function Cta(props: CtaProps) {
  const {
   label,
   children,
- variant = "primary",
- leftIcon: LeftIcon,
- rightIcon: RightIcon,
- className,
- as = "button",
- externalLink = false,
- ...rest
+  variant = "primary",
+  leftIcon: LeftIcon,
+  rightIcon: RightIcon,
+  className,
+  as = "button",
+  externalLink = false,
+  ...rest
  } = props;
 
  const content = children ?? label;
@@ -45,7 +45,13 @@ export default function Cta(props: CtaProps) {
   const resolvedRel = externalLink ? mergeExternalRel(rel) : rel;
   const resolvedTarget = externalLink ? "_blank" : target;
   return (
-   <a className={mergedClassName} href={href} rel={resolvedRel} target={resolvedTarget} {...anchorProps}>
+   <a
+    className={mergedClassName}
+    href={href}
+    rel={resolvedRel}
+    target={resolvedTarget}
+    {...anchorProps}
+   >
     {innerContent}
    </a>
   );

@@ -5,4 +5,3 @@ title: Licence Technologies et design de multimédia
 organization: Instituto Politecnico de Viseu
 location: Viseu, Portugal
 ---
-

@@ -2,11 +2,11 @@ import "./MarkdownContent.css";
 import type { MarkdownContentProps } from "@types";
 
 export default function MarkdownContent(props: MarkdownContentProps) {
- const { contentHtml, children } = props;
+ if ("contentHtml" in props && props.contentHtml !== undefined) {
+  return (
+   <div className="markdown-content" dangerouslySetInnerHTML={{ __html: props.contentHtml }} />
+  );
+ }
 
- return (
-  <div className="markdown-content" dangerouslySetInnerHTML={{ __html: contentHtml }}>
-   {children}
-  </div>
- );
+ return <div className="markdown-content">{props.children}</div>;
 }

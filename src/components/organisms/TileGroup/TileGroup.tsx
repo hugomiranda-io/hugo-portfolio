@@ -4,7 +4,7 @@ import { Tile } from "@components";
 
 import type { TileGroupProps } from "@types";
 
-export default function KeyHighlights(props: TileGroupProps) {
+export default function TileGroup(props: TileGroupProps) {
  const { data, title } = props;
 
  return (

@@ -25,16 +25,16 @@ Le serveur démarre sur `http://localhost:4321`.
 
 ## Scripts
 
-| Commande           | Action |
-| :----------------- | :----- |
-| `pnpm dev`         | Lance le serveur de dev |
-| `pnpm build`       | Build de prod vers `./dist/` |
-| `pnpm preview`     | Prévisualise le build |
-| `pnpm lint`        | Lint (ESLint) |
-| `pnpm lint:fix`    | Lint + auto-fix |
-| `pnpm format`      | Format (Prettier) |
-| `pnpm format:check` | Vérifie le format |
-| `pnpm astro`        | CLI Astro |
+| Commande            | Action                       |
+| :------------------ | :--------------------------- |
+| `pnpm dev`          | Lance le serveur de dev      |
+| `pnpm build`        | Build de prod vers `./dist/` |
+| `pnpm preview`      | Prévisualise le build        |
+| `pnpm lint`         | Lint (ESLint)                |
+| `pnpm lint:fix`     | Lint + auto-fix              |
+| `pnpm format`       | Format (Prettier)            |
+| `pnpm format:check` | Vérifie le format            |
+| `pnpm astro`        | CLI Astro                    |
 
 ## Personnalisation
 

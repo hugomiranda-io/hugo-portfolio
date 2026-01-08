@@ -9,8 +9,8 @@ type CommonProps = {
 };
 
 type AnchorTileElementProps = {
- as?: "a";
- href?: string;
+ as: "a";
+ href: string;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children" | "className" | "href">;
 
 type DivElementProps = {
