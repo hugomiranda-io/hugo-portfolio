@@ -4,16 +4,24 @@ import type { CtaProps } from "@types";
 import "./Cta.css";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
+function mergeExternalRel(rel?: string) {
+ const tokens = new Set((rel ?? "").split(/\s+/).filter(Boolean));
+ tokens.add("noopener");
+ tokens.add("noreferrer");
+ return Array.from(tokens).join(" ");
+}
+
 export default function Cta(props: CtaProps) {
  const {
   label,
   children,
-  variant = "primary",
-  leftIcon: LeftIcon,
-  rightIcon: RightIcon,
-  className,
-  as = "button",
-  ...rest
+ variant = "primary",
+ leftIcon: LeftIcon,
+ rightIcon: RightIcon,
+ className,
+ as = "button",
+ externalLink = false,
+ ...rest
  } = props;
 
  const content = children ?? label;
@@ -29,11 +37,15 @@ export default function Cta(props: CtaProps) {
  );
 
  if (as === "a") {
-  const { href, ...anchorProps } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & {
+  const { href, rel, target, ...anchorProps } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & {
    href: string;
+   rel?: string;
+   target?: string;
   };
+  const resolvedRel = externalLink ? mergeExternalRel(rel) : rel;
+  const resolvedTarget = externalLink ? "_blank" : target;
   return (
-   <a className={mergedClassName} href={href} {...anchorProps}>
+   <a className={mergedClassName} href={href} rel={resolvedRel} target={resolvedTarget} {...anchorProps}>
     {innerContent}
    </a>
   );

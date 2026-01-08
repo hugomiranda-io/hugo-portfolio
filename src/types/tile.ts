@@ -5,6 +5,7 @@ type CommonProps = {
  description?: string;
  className?: string;
  icon: ComponentType;
+ externalLink?: boolean;
 };
 
 type AnchorTileElementProps = {

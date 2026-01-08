@@ -5,6 +5,7 @@ import type { TileProps } from "@types";
 export const KEYSOCIALS_DATA: TileProps[] = [
  {
   as: "a",
+  externalLink: true,
   href: "https://github.com/hugocsmiranda",
   title: "Github",
   description: "Mes projets",
@@ -12,6 +13,7 @@ export const KEYSOCIALS_DATA: TileProps[] = [
  },
  {
   as: "a",
+  externalLink: true,
   href: "https://www.figma.com/@hugomiranda",
   title: "Figma",
   description: "Ma page community",
@@ -19,6 +21,7 @@ export const KEYSOCIALS_DATA: TileProps[] = [
  },
  {
   as: "a",
+  externalLink: true,
   href: "https://dribbble.com/hugocsmiranda",
   title: "Dribbble",
   description: "Mes créations",

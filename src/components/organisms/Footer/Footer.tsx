@@ -18,7 +18,7 @@ export default function Footer() {
        Je suis toujours ouvert aux échanges — projets, collaborations ou simples idées. Écrivez-moi
        !
       </p>
-      <Cta as="a" href="mailTo:contact@contact.com" variant="primary">
+      <Cta as="a" href="mailto:contact@contact.com" variant="primary">
        Contact
       </Cta>
      </div>
@@ -30,13 +30,13 @@ export default function Footer() {
      </div>
      <div className="contact-card__body ">
       {FOOTERSOCIALS_DATA.map((item) => (
-       <Cta key={"button-" + item.label} variant="soft" target="_blank" {...item} />
+       <Cta key={"button-" + item.label} variant="soft" externalLink {...item} />
       ))}
      </div>
     </div>
    </div>
-   <div className="container-app mx-auto flex justify-center pt-3xl">
-    <Logo color="dark" size="lg" />
+   <div className="container-app mx-auto flex pt-3xl items-center justify-center gap-sm">
+    <Logo color="light" size="lg" />
    </div>
   </footer>
  );
