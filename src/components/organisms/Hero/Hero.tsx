@@ -10,8 +10,12 @@ export default function Hero() {
      <h2 className="heading text-high-contrast">{HERO_DATA.title}</h2>
      <h3 className="heading text-low-contrast">{HERO_DATA.subtitle}</h3>
     </div>
-    <div className="flex flex-col gap-xl">
-     <p className="text-low-contrast">{HERO_DATA.text}</p>
+    <div className="flex flex-col gap-xs">
+     {HERO_DATA.text.map((paragraph, index) => (
+      <p className="text-low-contrast" key={index}>
+       {paragraph}
+      </p>
+     ))}
     </div>
    </div>
   </>
