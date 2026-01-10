@@ -18,4 +18,5 @@ export type { MarkdownContentProps } from "./markdownContent";
 
 // Organisms
 export type { HeroProps } from "./hero";
+export type { IntroTextProps } from "./introText";
 export type { TileGroupProps } from "./TileGroup";

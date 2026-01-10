@@ -6,7 +6,7 @@ import { FOOTERSOCIALS_DATA } from "@data";
 
 export default function Footer() {
  return (
-  <footer className="surface-subtle pt-3xl pb-3xl">
+  <footer className="surface-subtle pt-5xl pb-3xl">
    <div className="container-app mx-auto container-grid">
     <div id="contact" className="contact-card">
      <div className="contact-card__header">
@@ -35,8 +35,8 @@ export default function Footer() {
      </div>
     </div>
    </div>
-   <div className="container-app mx-auto flex pt-3xl items-center justify-center gap-sm">
-    <Logo color="light" size="lg" />
+   <div className="container-app mx-auto flex pt-5xl items-center justify-center gap-sm">
+    <Logo color="light" size="xl" />
    </div>
   </footer>
  );
