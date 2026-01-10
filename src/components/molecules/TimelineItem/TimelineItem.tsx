@@ -20,15 +20,17 @@ export default function TimelineItem(props: TimelineItemProps) {
   return (
    <AccordionItemRadix value={accordionValue} className={`timeline-item timeline-item--${variant}`}>
     <AccordionTriggerRadix className="timeline-item__trigger">
-     <div className="timeline-item__period">
-      <span>{startPeriod}</span>
-      <span>{endPeriod}</span>
-     </div>
-     <div className="timeline-item__details">
-      <span className="font-weight-500">{title}</span>
-      <div className="timeline-item__agency">
-       <span>{organization}</span>
-       <span className="text-low-contrast">{location}</span>
+     <div className="timeline-item__info">
+      <div className="timeline-item__period">
+       <span>{startPeriod}</span>
+       <span>{endPeriod}</span>
+      </div>
+      <div className="timeline-item__details">
+       <span className="font-weight-500">{title}</span>
+       <div className="timeline-item__agency">
+        <span>{organization}</span>
+        <span className="text-low-contrast">{location}</span>
+       </div>
       </div>
      </div>
      <div className="timeline-item__icon">
@@ -46,14 +48,16 @@ export default function TimelineItem(props: TimelineItemProps) {
   return (
    <div className={`timeline-item timeline-item--${variant}`}>
     <div className="timeline-item__trigger">
-     <div className="timeline-item__period">
-      <span>{endPeriod}</span>
-     </div>
-     <div className="timeline-item__details">
-      <span className="font-weight-500">{title}</span>
-      <div className="timeline-item__agency">
-       <span>{organization}</span>
-       <span className="text-low-contrast">{location}</span>
+     <div className="timeline-item__info">
+      <div className="timeline-item__period">
+       <span>{endPeriod}</span>
+      </div>
+      <div className="timeline-item__details">
+       <span className="font-weight-500">{title}</span>
+       <div className="timeline-item__agency">
+        <span>{organization}</span>
+        <span className="text-low-contrast">{location}</span>
+       </div>
       </div>
      </div>
     </div>

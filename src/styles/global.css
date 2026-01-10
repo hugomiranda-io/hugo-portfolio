@@ -134,10 +134,11 @@
   --font-size-xs: 0.875rem;
   /* RESPONSIVE */
   --body-max-width: 100%;
-  --body-margin: var(--size-xl);
+  --body-margin: var(--size-md);
   --body-gutter: var(--size-md);
   @media (width >= 704px) {
    --body-max-width: 720px;
+   --body-margin: var(--size-xl);
   }
   /* FOCUS */
   --focus: 0 0 0 var(--size-2xs) var(--color-primary-7);

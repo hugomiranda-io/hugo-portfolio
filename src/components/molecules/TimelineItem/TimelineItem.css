@@ -18,10 +18,24 @@
   gap: var(--size-2xl);
   background-color: transparent;
 
-  & .timeline-item__period {
+  & .timeline-item__info {
    display: flex;
    flex-direction: column;
+   flex: 1;
+   @media (width >= 704px) {
+    flex-direction: row;
+    gap: var(--size-2xl);
+   }
+  }
+
+  & .timeline-item__period {
+   display: flex;
+   flex-direction: row;
+   gap: var(--size-xs);
    color: var(--color-text-low-contrast);
+   @media (width >= 704px) {
+    flex-direction: column;
+   }
   }
 
   & .timeline-item__details {
@@ -31,8 +45,11 @@
 
    & .timeline-item__agency {
     display: flex;
-    flex-direction: row;
-    gap: var(--size-xs);
+    flex-direction: column;
+    @media (width >= 704px) {
+     flex-direction: row;
+     gap: var(--size-xs);
+    }
    }
   }
 
