@@ -35,6 +35,7 @@
    color: var(--color-text-low-contrast);
    @media (width >= 704px) {
     flex-direction: column;
+    gap: initial;
    }
   }
 
