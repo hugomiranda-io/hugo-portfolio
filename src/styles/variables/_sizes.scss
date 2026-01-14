@@ -1,0 +1,13 @@
+@use "../tools/mixins";
+@use "../tools/functions";
+
+$size-base: 2px;
+$size-multipliers: (1, 2, 4, 6, 8, 10, 12, 16, 20, 32, 64);
+$prefix: "size";
+
+@layer theme {
+ :root {
+  --#{$prefix}-px: 1px;
+  @include mixins.scale-variables($size-base, $size-multipliers, $prefix);
+ }
+}

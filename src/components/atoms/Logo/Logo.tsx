@@ -1,4 +1,4 @@
-import "./logo.css";
+import "./Logo.scss";
 import type { LogoProps } from "@types";
 
 export default function Logo(props: LogoProps) {
@@ -16,10 +16,10 @@ export default function Logo(props: LogoProps) {
   classes.push("logo-size--md");
  }
 
- if (color === "light") {
-  classes.push("logo-color--light");
+ if (color === "muted") {
+  classes.push("logo-color--muted");
  } else {
-  classes.push("logo-color--dark");
+  classes.push("logo-color--strong");
  }
 
  return (

@@ -1,4 +1,4 @@
-.heading {
+@mixin heading-base {
  font-weight: 500;
  line-height: var(--leading-snug);
 }

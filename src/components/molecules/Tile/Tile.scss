@@ -1,0 +1,43 @@
+@use "../../../styles/tools/mixins";
+
+.tile {
+ grid-column: span 2 / span 2;
+ border-radius: var(--radius-default);
+ background-color: var(--color-surface-default);
+ box-shadow: var(--shadow-sm);
+ transition: 0.2s;
+
+ @include mixins.mq {
+  grid-column: span 4 / span 4;
+ }
+
+ &:is(a) {
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--color-border-subtle);
+  transition: 0.2s;
+  &:hover {
+   transform: translateY(calc(var(--size-2xs) * -1));
+   cursor: pointer;
+   border-color: var(--color-border-hover);
+   box-shadow: var(--shadow-md);
+  }
+  &:focus {
+   outline: none;
+  }
+
+  &:focus-visible {
+   transform: translateY(calc(var(--size-2xs) * -1));
+   box-shadow: var(--shadow-focus);
+  }
+ }
+
+ & .tile__container {
+  display: flex;
+  flex-direction: column;
+ }
+
+ & .tile__icon {
+  padding: var(--size-2xl) var(--size-md);
+ }
+}

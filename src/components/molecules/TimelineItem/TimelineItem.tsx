@@ -1,4 +1,4 @@
-import "./TimelineItem.css";
+import "./TimelineItem.scss";
 import {
  AccordionItem as AccordionItemRadix,
  AccordionTrigger as AccordionTriggerRadix,
@@ -34,7 +34,7 @@ export default function TimelineItem(props: TimelineItemProps) {
       </div>
      </div>
      <div className="timeline-item__icon">
-      <Icon icon={ChevronDown} size="md" priority="high" />
+      <Icon icon={ChevronDown} size="md" color="strong" />
      </div>
     </AccordionTriggerRadix>
     <AccordionContentRadix className="accordion-content">

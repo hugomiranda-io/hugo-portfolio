@@ -1,4 +1,4 @@
-import "./Timeline.css";
+import "./Timeline.scss";
 
 import { Accordion as AccordionRadix } from "@radix-ui/react-accordion";
 

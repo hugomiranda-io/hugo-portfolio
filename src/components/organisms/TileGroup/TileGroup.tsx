@@ -1,4 +1,4 @@
-import "./TileGroup.css";
+import "./TileGroup.scss";
 
 import { Tile } from "@components";
 

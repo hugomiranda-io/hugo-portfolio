@@ -1,0 +1,90 @@
+@use "theme";
+@use "tools/mixins";
+
+$display-values: (
+ "block": block,
+ "inline": inline,
+ "inline-block": inline-block,
+ "flex": flex,
+ "inline-flex": inline-flex,
+ "grid": grid,
+ "inline-grid": inline-grid,
+ "none": none,
+);
+
+$justify-values: (
+ "start": start,
+ "center": center,
+ "between": space-between,
+ "around": space-around,
+ "evenly": space-evenly,
+);
+
+$flex-direction-values: (
+ "row": row,
+ "row-reverse": row-reverse,
+ "col": column,
+ "col-reverse": column-reverse,
+);
+
+$flex-wrap-values: (
+ "wrap": wrap,
+ "nowrap": nowrap,
+ "wrap-reverse": wrap-reverse,
+);
+
+$align-content-values: (
+ "start": flex-start,
+ "center": center,
+ "end": flex-end,
+ "between": space-between,
+ "around": space-around,
+ "evenly": space-evenly,
+ "stretch": stretch,
+);
+
+$align-items-values: (
+ "start": flex-start,
+ "center": center,
+ "end": flex-end,
+ "stretch": stretch,
+ "baseline": baseline,
+);
+
+@layer utilities {
+ /* Générer des classes padding et margin*/
+ @include mixins.spacing-utilities(theme.$size-aliases);
+
+ /* Générer des classes utilitaires display */
+ @include mixins.css-class($display-values, "display");
+
+ /* Générer des classes utilitaires gap */
+ @include mixins.css-class-var(theme.$size-aliases, "gap", "gap", "size");
+
+ /* Générer des classes utilitaires justify-content */
+ @include mixins.css-class($justify-values, "justify-content", "justify");
+
+ /* Générer des classes utilitaires flex-direction */
+ @include mixins.css-class($flex-direction-values, "flex-direction", "flex");
+
+ /* Générer des classes utilitaires flex-wrap */
+ @include mixins.css-class($flex-wrap-values, "flex-wrap", "flex");
+
+ /* Générer des classes utilitaires align-content */
+ @include mixins.css-class($align-content-values, "align-content", "content");
+
+ /* Générer des classes utilitaires align-items */
+ @include mixins.css-class($align-items-values, "align-items", "items");
+
+ /* Générer des classes utilitaires surface */
+ @include mixins.css-class(theme.$surface-color-aliases, "background-color", "surface");
+
+ /* Générer des classes utilitaires border color */
+ @include mixins.css-class(theme.$border-color-aliases, "background-color", "color-border");
+
+ /* Générer des classes utilitaires text color */
+ @include mixins.css-class(theme.$text-color-aliases, "color", "text");
+
+ /* Générer des classes utilitaires icon color */
+ @include mixins.css-class(theme.$text-color-aliases, "stroke", "icon");
+}

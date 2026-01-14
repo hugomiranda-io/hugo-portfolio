@@ -4,6 +4,6 @@
  gap: var(--size-xs);
  padding: var(--size-2xs);
  border-radius: var(--radius-rounded);
- background-color: var(--color-surface-theme);
+ background-color: var(--color-surface-default);
  box-shadow: var(--shadow-md);
 }

@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, ComponentType, HTMLAttributes } from "react"
 
 type CommonProps = {
  title: string;
- description?: string;
+ description: string;
  className?: string;
  icon: ComponentType;
  externalLink?: boolean;

@@ -1,10 +1,10 @@
 import type { HeadingProps } from "@types";
-import "./Heading.css";
+import "./Heading.scss";
 
 export default function Heading(props: HeadingProps) {
- const { as, label, contrast = "high" } = props;
+ const { as, label, color = "strong" } = props;
 
- const mergedClassName = ["heading", `text-${contrast}-contrast`].filter(Boolean).join(" ");
+ const mergedClassName = ["heading", `text-${color}`].filter(Boolean).join(" ");
 
  if (as === "H1") {
   return <h1 className={mergedClassName}>{label}</h1>;

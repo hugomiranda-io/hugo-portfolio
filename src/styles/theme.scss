@@ -1,0 +1,117 @@
+@use "sass:map";
+@use "tools/mixins";
+@use "variables/colors";
+@use "variables/sizes";
+
+$size-aliases: (
+ "3xs": var(--size-1),
+ "2xs": var(--size-2),
+ "xs": var(--size-4),
+ "sm": var(--size-6),
+ "md": var(--size-8),
+ "lg": var(--size-10),
+ "xl": var(--size-12),
+ "2xl": var(--size-16),
+ "3xl": var(--size-20),
+ "4xl": var(--size-32),
+ "5xl": var(--size-64),
+);
+
+$surface-color-aliases: (
+ "app": var(--color-neutral-1),
+ "subtle": var(--color-neutral-2),
+ "solid": var(--color-neutral-12),
+ "solid-hover": var(--color-neutral-13),
+ "default": var(--color-neutral-0),
+ "inverse": var(--color-neutral-13),
+ "interactive": var(--color-neutral-3),
+ "interactive-hover": var(--color-neutral-4),
+ "interactive-active": var(--color-neutral-5),
+);
+
+$border-color-aliases: (
+ "inverse": var(--color-surface-app),
+ "subtle": var(--color-neutral-6),
+ "default": var(--color-neutral-7),
+ "hover": var(--color-neutral-8),
+ "active": var(--color-primary-8),
+ "focus": var(--color-primary-7),
+);
+
+$text-color-aliases: (
+ "muted": var(--color-neutral-11),
+ "strong": var(--color-neutral-12),
+ "inverse": var(--color-neutral-1),
+ "disabled": var(--color-neutral-7),
+);
+
+@layer theme {
+ :root {
+  /* COLORS */
+  @include mixins.css-variables($surface-color-aliases, "color-surface");
+  @include mixins.css-variables($border-color-aliases, "color-border");
+  @include mixins.css-variables($text-color-aliases, "color-text");
+  @include mixins.css-variables($text-color-aliases, "color-icon");
+
+  /* SIZES */
+  // Genere des variables CSS size -> --size-md
+  @include mixins.css-variables($size-aliases, "size");
+  // border
+  --border-width: var(--size-px);
+  //radius
+  --radius-inside: var(--size-sm);
+  --radius-default: var(--size-md);
+  --radius-outside-lg: var(--size-lg);
+  --radius-outside-xl: var(--size-xl);
+  --radius-rounded: 9999rem;
+  //icon
+  --icon-sm: var(--size-md);
+  --icon-md: var(--size-xl);
+  --icon-lg: var(--size-2xl);
+  --icon-stroke-width: 1.5;
+
+  /* TYPOGRAPHIE */
+  // font family
+  --font-family-sans-serif: var(--font-family-inter);
+  --font-family-mono: var(--font-family-google-sans-code);
+  // font family
+  --leading-none: var(--line-height-1);
+  --leading-tight: var(--line-height-1_25);
+  --leading-snug: var(--line-height-1_375);
+  --leading-normal: var(--line-height-1_5);
+  --leading-relaxed: var(--line-height-1_625);
+  --leading-loose: var(--line-height-2);
+  // font size
+  --font-size: var(--font-size-1);
+  --font-size-sm: var(--font-size-0_875);
+
+  /* RESPONSIVE */
+  --body-max-width: 100%;
+  --body-margin: var(--size-md);
+  --body-gutter: var(--size-md);
+  @include mixins.mq {
+   --body-max-width: 720px;
+   --body-margin: var(--size-xl);
+  }
+
+  /* SHADOW */
+  --shadow-sm:
+   0 0 2px -1px rgb(from var(--color-black) r g b / 10%),
+   0 2px 4px 0 rgb(from var(--color-black) r g b / 6%);
+  --shadow-md:
+   0 0 2px -1px rgb(from var(--color-black) r g b / 10%),
+   0 4px 6px -4px rgb(from var(--color-black) r g b / 6%),
+   0 10px 15px -3px rgb(from var(--color-black) r g b / 4%);
+  @supports (color: oklch(0 0 0)) {
+   --shadow-sm:
+    0 0 2px -1px oklch(from var(--color-black) l c h / 10%),
+    0 2px 4px 0 oklch(from var(--color-black) l c h / 6%);
+   --shadow-md:
+    0 0 2px -1px oklch(from var(--color-black) l c h / 10%),
+    0 4px 6px -4px oklch(from var(--color-black) l c h / 6%),
+    0 10px 15px -3px oklch(from var(--color-black) l c h / 4%);
+  }
+  // Focus
+  --shadow-focus: 0 0 0 var(--size-2xs) var(--color-border-focus);
+ }
+}

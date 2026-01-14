@@ -1,8 +1,8 @@
 import type { IconProps } from "@types";
-import "./icon.css";
+import "./Icon.scss";
 
 export default function Icon(props: IconProps) {
- const { icon: Icon, size, priority } = props;
+ const { icon: Icon, size, color } = props;
 
  const classes = ["icon"];
 
@@ -14,12 +14,12 @@ export default function Icon(props: IconProps) {
   classes.push("icon-size--md");
  }
 
- if (priority === "low") {
-  classes.push("icon-priority--low");
- } else if (priority === "theme") {
-  classes.push("icon-priority--theme");
+ if (color === "muted") {
+  classes.push("icon-color--muted");
+ } else if (color === "inverse") {
+  classes.push("icon-color--inverse");
  } else {
-  classes.push("icon-priority--high");
+  classes.push("icon-color--strong");
  }
 
  return (

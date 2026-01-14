@@ -1,21 +1,19 @@
 .btn {
- all: unset;
  display: inline-flex;
  align-items: center;
  justify-content: center;
  gap: var(--size-2xs);
- padding-inline: var(--size-sm);
- min-height: 2.5rem;
+ padding: var(--size-xs) var(--size-sm);
  border-radius: var(--radius-default);
 
  &.btn-primary {
-  color: var(--color-text-theme);
+  color: var(--color-text-inverse);
   background-color: var(--color-surface-solid);
  }
 
  &.btn-soft {
-  color: var(--color-text-high-contrast);
-  background-color: var(--color-ui);
+  color: var(--color-text-strong);
+  background-color: var(--color-surface-interactive);
  }
 
  & .btn__label {
@@ -30,7 +28,15 @@
   }
 
   &.btn-soft {
-   background-color: var(--color-ui-hover);
+   background-color: var(--color-surface-interactive-hover);
   }
+ }
+
+ &:focus {
+  outline: none;
+ }
+
+ &:focus-visible {
+  box-shadow: var(--shadow-focus);
  }
 }

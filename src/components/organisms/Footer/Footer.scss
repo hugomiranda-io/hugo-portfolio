@@ -1,14 +1,16 @@
+@use "../../../styles/tools/mixins";
+
 .contact-card {
  display: flex;
  flex-direction: column;
  grid-column: span 4 / span 4;
  gap: var(--size-lg);
  padding: var(--size-4xl);
- background-color: var(--color-surface-theme);
+ background-color: var(--color-surface-default);
  border-radius: var(--radius-default);
  box-shadow: var(--shadow-sm);
 
- @media (width >= 704px) {
+ @include mixins.mq {
   grid-column: span 6 / span 6;
  }
 
@@ -16,12 +18,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--size-2xl);
-
-  & svg {
-   height: var(--icon-lg);
-   width: var(--icon-lg);
-   stroke-width: var(--icon-stroke-width);
-  }
  }
 
  & .contact-card__body {

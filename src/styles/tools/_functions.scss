@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "sass:string";
+
+/* Substituition du "." par "_" */
+@function token-suffix($value) {
+ $value-str: "#{$value}";
+ $dot-index: string.index($value-str, ".");
+
+ @if $dot-index == null {
+  @return $value-str;
+ }
+
+ $before: string.slice($value-str, 1, $dot-index - 1);
+ $after: string.slice($value-str, $dot-index + 1);
+
+ @return "#{$before}_#{$after}";
+}
+
+/* Génére une map */
+@function scale-map($multipliers, $prefix) {
+ $result: ();
+
+ @each $multiplier in $multipliers {
+  $token: token-suffix($multiplier);
+  $result: map.merge(
+   $result,
+   (
+    $token: var(--#{$prefix}-#{$token}),
+   )
+  );
+ }
+
+ @return $result;
+}

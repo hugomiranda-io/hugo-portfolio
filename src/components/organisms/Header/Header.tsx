@@ -1,6 +1,6 @@
 import { Navbar, NavbarItem } from "@components";
 import { NAVBAR_DATA } from "@data";
-import "./Header.css";
+import "./Header.scss";
 
 type HeaderProps = {
  currentPath?: string;

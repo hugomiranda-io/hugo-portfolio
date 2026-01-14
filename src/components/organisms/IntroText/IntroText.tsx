@@ -1,4 +1,4 @@
-import "./IntroText.css";
+import "./IntroText.scss";
 
 import { INTROTEXT_DATA } from "@data";
 

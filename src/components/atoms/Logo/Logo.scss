@@ -17,21 +17,21 @@
   width: var(--size-3xl);
  }
 
- &.logo-color--light {
+ &.logo-color--muted {
   & .bg {
-   fill: var(--color-ui);
+   fill: var(--color-surface-interactive);
   }
   & .path {
-   fill: var(--color-icon-high-contrast);
+   fill: var(--color-icon-strong);
   }
  }
 
- &.logo-color--dark {
+ &.logo-color--strong {
   & .bg {
-   fill: var(--color-surface-opposite-theme);
+   fill: var(--color-surface-inverse);
   }
   & .path {
-   fill: var(--color-surface-app);
+   fill: var(--color-surface-default);
   }
  }
 }

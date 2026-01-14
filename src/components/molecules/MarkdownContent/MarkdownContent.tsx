@@ -1,4 +1,4 @@
-import "./MarkdownContent.css";
+import "./MarkdownContent.scss";
 import type { MarkdownContentProps } from "@types";
 
 export default function MarkdownContent(props: MarkdownContentProps) {

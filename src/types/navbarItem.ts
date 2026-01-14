@@ -1,6 +1,6 @@
 export type NavbarItemProps = {
  href: string;
- priority: "low" | "high";
+ variant: "default" | "fixed";
  label: string;
  active?: boolean;
 };

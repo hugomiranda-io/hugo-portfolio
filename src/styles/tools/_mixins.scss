@@ -1,0 +1,164 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "functions";
+@use "../variables/breakpoints";
+
+// Genere des variables CSS a partir d'une base et de multiplicateurs.
+@mixin scale-variables($base, $multipliers, $prefix: "size", $include-base: true) {
+ @if $include-base {
+  --#{$prefix}-base: #{$base};
+ }
+
+ @each $multiplier in $multipliers {
+  $token: functions.token-suffix($multiplier);
+  --#{$prefix}-#{$token}: calc(var(--#{$prefix}-base) * #{$multiplier});
+ }
+}
+
+// Genere des variables CSS depuis une map ou une liste de valeurs.
+@mixin css-variables($values, $prefix: null) {
+ $type: meta.type-of($values);
+
+ @if $type == "map" {
+  @each $key, $value in $values {
+   $css-value: $value;
+
+   @if meta.type-of($value) == "string" {
+    $css-value: string.unquote($value);
+   }
+
+   @if $prefix == null or $prefix == "" {
+    --#{$key}: #{$css-value};
+   } @else {
+    --#{$prefix}-#{$key}: #{$css-value};
+   }
+  }
+ } @else {
+  @each $value in $values {
+   $token: functions.token-suffix($value);
+   $css-value: $value;
+
+   @if meta.type-of($value) == "string" {
+    $css-value: string.unquote($value);
+   }
+
+   @if $prefix == null or $prefix == "" {
+    --#{$token}: #{$css-value};
+   } @else {
+    --#{$prefix}-#{$token}: #{$css-value};
+   }
+  }
+ }
+}
+
+// Genere des classes utilitaires a partir d'une liste ou d'une map.
+@mixin css-class($values, $property, $class-prefix: null) {
+ $type: meta.type-of($values);
+
+ @if $type == "map" {
+  @each $name, $value in $values {
+   $class-name: $name;
+   $css-value: $value;
+
+   @if meta.type-of($name) == "string" {
+    $class-name: string.unquote($name);
+   }
+
+   @if meta.type-of($value) == "string" {
+    $css-value: string.unquote($value);
+   }
+
+   @if $class-prefix == null or $class-prefix == "" {
+    .#{$class-name} {
+     #{$property}: #{$css-value};
+    }
+   } @else {
+    .#{$class-prefix}-#{$class-name} {
+     #{$property}: #{$css-value};
+    }
+   }
+  }
+ } @else {
+  @each $value in $values {
+   $token: $value;
+
+   @if meta.type-of($value) == "string" {
+    $token: string.unquote($value);
+   }
+
+   @if $class-prefix == null or $class-prefix == "" {
+    .#{$token} {
+     #{$property}: #{$token};
+    }
+   } @else {
+    .#{$class-prefix}-#{$token} {
+     #{$property}: #{$token};
+    }
+   }
+  }
+ }
+}
+
+// Genere des classes utilitaires vers des CSS vars (ex: --size-3xs).
+@mixin css-class-var($names, $property, $class-prefix, $var-prefix) {
+ $keys: $names;
+
+ @if meta.type-of($names) == "map" {
+  $keys: map.keys($names);
+ }
+
+ @each $name in $keys {
+  $token: $name;
+
+  @if meta.type-of($name) == "string" {
+   $token: string.unquote($name);
+  }
+
+  @if $class-prefix == null or $class-prefix == "" {
+   .#{$token} {
+    #{$property}: var(--#{$var-prefix}-#{$token});
+   }
+  } @else {
+   .#{$class-prefix}-#{$token} {
+    #{$property}: var(--#{$var-prefix}-#{$token});
+   }
+  }
+ }
+}
+
+// Genere les classes de spacing a partir d'une map de tailles.
+@mixin spacing-utilities($sizes) {
+ $spacing-utilities: (
+  "p": padding,
+  "pt": padding-top,
+  "pb": padding-bottom,
+  "pl": padding-left,
+  "pr": padding-right,
+  "px": padding-inline,
+  "py": padding-block,
+  "m": margin,
+  "mt": margin-top,
+  "mb": margin-bottom,
+  "ml": margin-left,
+  "mr": margin-right,
+  "mx": margin-inline,
+  "my": margin-block,
+ );
+
+ @each $prefix, $property in $spacing-utilities {
+  @each $name, $value in $sizes {
+   .#{$prefix}-#{$name} {
+    #{$property}: #{$value};
+   }
+  }
+ }
+}
+
+// Media query - breakpoint
+// use -> @include mixins.mq { ... } ou @include mixins.mq(900px) { ... }
+@mixin mq($min-width: breakpoints.$breakpoint-md) {
+ @media (width >= #{$min-width}) {
+  @content;
+ }
+}

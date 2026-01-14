@@ -1,0 +1,19 @@
+@use "../tools/mixins";
+
+@layer layout {
+ .container-app {
+  padding-inline: var(--body-margin);
+  margin-inline: auto;
+  max-width: var(--body-max-width);
+ }
+
+ .container-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: var(--body-gutter);
+  @include mixins.mq {
+   grid-template-columns: repeat(12, 1fr);
+  }
+ }
+}

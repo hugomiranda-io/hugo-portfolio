@@ -1,8 +1,11 @@
+@use "../../../styles/tools/typography";
+
 .markdown-content {
  display: flex;
  flex-direction: column;
  gap: var(--size-md);
  padding-bottom: var(--size-md);
+ color: var(--color-text-muted);
 
  & h1,
  h2,
@@ -10,14 +13,8 @@
  h4,
  h5,
  h6 {
-  color: var(--color-text-low-contrast);
   margin-top: var(--size-md);
-  font-weight: 500;
-  line-height: var(--leading-snug);
- }
-
- & p {
-  color: var(--color-text-low-contrast);
+  @include typography.heading-base;
  }
 
  & ul {
@@ -29,11 +26,8 @@
   margin-block-start: 0;
   margin-block-end: 0;
 
-  & li {
-   color: var(--color-text-low-contrast);
-   &::marker {
-    color: var(--color-ui-active);
-   }
+  & li::marker {
+   color: var(--color-surface-interactive);
   }
  }
 
@@ -44,11 +38,10 @@
   padding-inline-start: 0;
 
   & li {
-   font-size: var(--font-size-xs);
+   font-size: var(--font-size-sm);
    border: solid var(--border-width) var(--color-border-subtle);
    border-radius: var(--radius-rounded);
    padding: var(--size-2xs) var(--size-sm);
-   color: var(--color-text-low-contrast);
    font-family: var(--font-family-mono);
   }
  }

@@ -16,13 +16,13 @@
   width: var(--size-2xl);
  }
 
- &.icon-priority--low svg {
-  stroke: var(--color-icon-low-contrast);
+ &.icon-color--muted svg {
+  stroke: var(--color-icon-muted);
  }
- &.icon-priority--high svg {
-  stroke: var(--color-icon-high-contrast);
+ &.icon-color--strong svg {
+  stroke: var(--color-icon-strong);
  }
- &.icon-priority--theme svg {
-  stroke: var(--color-icon-theme);
+ &.icon-color--inverse svg {
+  stroke: var(--color-icon-inverse);
  }
 }

@@ -1,0 +1,32 @@
+.navbar__item {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: var(--size-xs) var(--size-md);
+ font-size: var(--font-size-sm);
+ border-radius: var(--radius-rounded);
+ color: var(--color-text-muted);
+ transition: 0.2s;
+
+ &:hover {
+  color: var(--color-text-strong);
+ }
+
+ &:focus {
+  outline: none;
+ }
+
+ &:focus-visible {
+  box-shadow: var(--shadow-focus);
+ }
+
+ &.navbar__item--active {
+  color: var(--color-text-inverse);
+  background-color: var(--color-surface-inverse);
+ }
+
+ &.navbar__item--subtle {
+  color: var(--color-text-strong);
+  background-color: var(--color-surface-subtle);
+ }
+}

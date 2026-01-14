@@ -1,6 +1,6 @@
-import { Icon } from "@components";
+import { Heading, Icon } from "@components";
 
-import "./Tile.css";
+import "./Tile.scss";
 import type { TileProps } from "@types";
 import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
 
@@ -27,11 +27,11 @@ export default function Tile(props: TileProps) {
  const innerContent = (
   <div className="tile__container">
    <div className="tile__icon">
-    <Icon icon={IconTile} size="lg" priority="high" />
+    <Icon icon={IconTile} size="lg" color="strong" />
    </div>
    <div className="flex flex-col p-md">
-    <div className="text-high-contrast font-weight-500">{title}</div>
-    <div className="text-low-contrast">{description}</div>
+    <Heading as="H3" color="strong" label={title} />
+    <Heading as="H3" color="muted" label={description} />
    </div>
   </div>
  );
