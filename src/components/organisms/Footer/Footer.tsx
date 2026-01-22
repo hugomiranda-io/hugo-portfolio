@@ -1,6 +1,6 @@
 import { Mail, Earth } from "lucide-react";
 
-import { Cta, Icon, Logo } from "@components";
+import { Cta, Heading, Icon, Logo, Text } from "@components";
 import "./Footer.scss";
 import { FOOTERSOCIALS_DATA } from "@data";
 
@@ -11,13 +11,13 @@ export default function Footer() {
     <div id="contact" className="contact-card">
      <div className="contact-card__header">
       <Icon icon={Mail} size="lg" color="strong" />
-      <h4 className="heading">Contact</h4>
+      <Heading as="h4">Contact</Heading>
      </div>
      <div className="contact-card__body ">
-      <p className="text-low-contrast ">
+      <Text as="p" color="muted">
        Je suis toujours ouvert aux échanges — projets, collaborations ou simples idées. Écrivez-moi
        !
-      </p>
+      </Text>
       <Cta as="a" href="mailto:contact@contact.com" variant="primary">
        Contact
       </Cta>
@@ -26,7 +26,7 @@ export default function Footer() {
     <div className="contact-card">
      <div className="contact-card__header">
       <Icon icon={Earth} size="lg" color="strong" />
-      <h4 className="heading">Présence en ligne</h4>
+      <Heading as="h4">Présence en ligne</Heading>
      </div>
      <div className="contact-card__body ">
       {FOOTERSOCIALS_DATA.map((item) => (

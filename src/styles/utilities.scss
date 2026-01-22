@@ -51,40 +51,96 @@ $align-items-values: (
  "baseline": baseline,
 );
 
+$font-weight-values: (
+ "thin": 100,
+ "extralight": 200,
+ "light": 300,
+ "normal": 400,
+ "medium": 500,
+ "semibold": 600,
+ "bold": 700,
+ "extrabold": 800,
+ "black": 900,
+);
+
 @layer utilities {
  /* Générer des classes padding et margin*/
- @include mixins.spacing-utilities(theme.$size-aliases);
+ @include mixins.spacing-utilities(theme.$size-aliases, $responsive: true);
 
  /* Générer des classes utilitaires display */
- @include mixins.css-class($display-values, "display");
+ @include mixins.css-class($display-values, "display", $responsive: true);
 
  /* Générer des classes utilitaires gap */
- @include mixins.css-class-var(theme.$size-aliases, "gap", "gap", "size");
+ @include mixins.css-class-var(
+  theme.$size-aliases,
+  "gap",
+  "gap",
+  "size",
+  $responsive: true
+ );
 
  /* Générer des classes utilitaires justify-content */
- @include mixins.css-class($justify-values, "justify-content", "justify");
+ @include mixins.css-class($justify-values, "justify-content", "justify", $responsive: true);
 
  /* Générer des classes utilitaires flex-direction */
- @include mixins.css-class($flex-direction-values, "flex-direction", "flex");
+ @include mixins.css-class(
+  $flex-direction-values,
+  "flex-direction",
+  "flex",
+  $responsive: true
+ );
 
  /* Générer des classes utilitaires flex-wrap */
- @include mixins.css-class($flex-wrap-values, "flex-wrap", "flex");
+ @include mixins.css-class($flex-wrap-values, "flex-wrap", "flex", $responsive: true);
 
  /* Générer des classes utilitaires align-content */
- @include mixins.css-class($align-content-values, "align-content", "content");
+ @include mixins.css-class(
+  $align-content-values,
+  "align-content",
+  "content",
+  $responsive: true
+ );
 
  /* Générer des classes utilitaires align-items */
- @include mixins.css-class($align-items-values, "align-items", "items");
+ @include mixins.css-class(
+  $align-items-values,
+  "align-items",
+  "items",
+  $responsive: true
+ );
 
  /* Générer des classes utilitaires surface */
- @include mixins.css-class(theme.$surface-color-aliases, "background-color", "surface");
+ @include mixins.css-class(
+  theme.$surface-color-aliases,
+  "background-color",
+  "surface",
+  $responsive: true
+ );
 
  /* Générer des classes utilitaires border color */
- @include mixins.css-class(theme.$border-color-aliases, "background-color", "color-border");
+ @include mixins.css-class(
+  theme.$border-color-aliases,
+  "background-color",
+  "color-border",
+  $responsive: true
+ );
+
+ /* Générer des classes utilitaires font weight */
+ @include mixins.css-class($font-weight-values, "font-weight", "font", $responsive: true);
 
  /* Générer des classes utilitaires text color */
- @include mixins.css-class(theme.$text-color-aliases, "color", "text");
+ @include mixins.css-class(
+  theme.$text-color-aliases,
+  "color",
+  "text",
+  $responsive: true
+ );
 
  /* Générer des classes utilitaires icon color */
- @include mixins.css-class(theme.$text-color-aliases, "stroke", "icon");
+ @include mixins.css-class(
+  theme.$text-color-aliases,
+  "stroke",
+  "icon",
+  $responsive: true
+ );
 }

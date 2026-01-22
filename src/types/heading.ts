@@ -1,5 +1,12 @@
-export type HeadingProps = {
- as: "H1" | "H2" | "H3" | "H4" | "H5" | "H6" | "Paragraph";
- label: string;
+import type { HTMLAttributes, ReactNode } from "react";
+
+export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+export type HeadingProps = Omit<HTMLAttributes<HTMLHeadingElement>, "color" | "size"> & {
+ as: HeadingLevel;
+ fontSize?: HeadingLevel;
+ label?: string;
+ children?: ReactNode;
+ fontWeight?: "regular" | "strong";
  color?: "muted" | "strong";
 };

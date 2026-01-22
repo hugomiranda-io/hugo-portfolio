@@ -3,6 +3,7 @@ export { default as Cta } from "./atoms/Cta/Cta";
 export { default as Icon } from "./atoms/Icon/Icon";
 export { default as NavbarItem } from "./atoms/NavbarItem/NavbarItem";
 export { default as Heading } from "./atoms/Heading/Heading";
+export { default as Text } from "./atoms/Text/Text";
 export { default as Logo } from "./atoms/Logo/Logo";
 // Molecules
 export { default as Tile } from "./molecules/Tile/Tile";

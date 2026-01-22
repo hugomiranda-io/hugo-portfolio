@@ -1,0 +1,13 @@
+@use "../../../styles/tools/typography";
+
+.text {
+ @include typography.paragraph-base;
+}
+
+.text--small {
+ font-size: var(--font-size-sm);
+}
+
+.text--strong {
+ font-weight: 500;
+}

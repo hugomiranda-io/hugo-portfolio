@@ -4,6 +4,14 @@
 @use "functions";
 @use "../variables/breakpoints";
 
+@function _class-suffix($suffix, $separator: "--") {
+ @if $suffix == null or $suffix == "" {
+  @return "";
+ }
+
+ @return "#{$separator}#{$suffix}";
+}
+
 // Genere des variables CSS a partir d'une base et de multiplicateurs.
 @mixin scale-variables($base, $multipliers, $prefix: "size", $include-base: true) {
  @if $include-base {
@@ -53,7 +61,7 @@
 }
 
 // Genere des classes utilitaires a partir d'une liste ou d'une map.
-@mixin css-class($values, $property, $class-prefix: null) {
+@mixin _css-class($values, $property, $class-prefix: null, $class-suffix: "") {
  $type: meta.type-of($values);
 
  @if $type == "map" {
@@ -70,11 +78,11 @@
    }
 
    @if $class-prefix == null or $class-prefix == "" {
-    .#{$class-name} {
+    .#{$class-name}#{$class-suffix} {
      #{$property}: #{$css-value};
     }
    } @else {
-    .#{$class-prefix}-#{$class-name} {
+    .#{$class-prefix}-#{$class-name}#{$class-suffix} {
      #{$property}: #{$css-value};
     }
    }
@@ -88,11 +96,11 @@
    }
 
    @if $class-prefix == null or $class-prefix == "" {
-    .#{$token} {
+    .#{$token}#{$class-suffix} {
      #{$property}: #{$token};
     }
    } @else {
-    .#{$class-prefix}-#{$token} {
+    .#{$class-prefix}-#{$token}#{$class-suffix} {
      #{$property}: #{$token};
     }
    }
@@ -100,8 +108,44 @@
  }
 }
 
+@mixin css-class(
+ $values,
+ $property,
+ $class-prefix: null,
+ $responsive: false,
+ $breakpoint: breakpoints.$breakpoint-md,
+ $suffix-under: "ubp",
+ $suffix-over: "obp",
+ $separator: "--"
+) {
+ @include _css-class($values, $property, $class-prefix);
+
+ @if $responsive {
+  $under-suffix: _class-suffix($suffix-under, $separator);
+  $over-suffix: _class-suffix($suffix-over, $separator);
+
+  @if $under-suffix != "" {
+   @include mq-under($breakpoint) {
+    @include _css-class($values, $property, $class-prefix, $under-suffix);
+   }
+  }
+
+  @if $over-suffix != "" {
+   @include mq($breakpoint) {
+    @include _css-class($values, $property, $class-prefix, $over-suffix);
+   }
+  }
+ }
+}
+
 // Genere des classes utilitaires vers des CSS vars (ex: --size-3xs).
-@mixin css-class-var($names, $property, $class-prefix, $var-prefix) {
+@mixin _css-class-var(
+ $names,
+ $property,
+ $class-prefix,
+ $var-prefix,
+ $class-suffix: ""
+) {
  $keys: $names;
 
  @if meta.type-of($names) == "map" {
@@ -116,19 +160,62 @@
   }
 
   @if $class-prefix == null or $class-prefix == "" {
-   .#{$token} {
+   .#{$token}#{$class-suffix} {
     #{$property}: var(--#{$var-prefix}-#{$token});
    }
   } @else {
-   .#{$class-prefix}-#{$token} {
+   .#{$class-prefix}-#{$token}#{$class-suffix} {
     #{$property}: var(--#{$var-prefix}-#{$token});
    }
   }
  }
 }
 
+@mixin css-class-var(
+ $names,
+ $property,
+ $class-prefix,
+ $var-prefix,
+ $responsive: false,
+ $breakpoint: breakpoints.$breakpoint-md,
+ $suffix-under: "ubp",
+ $suffix-over: "obp",
+ $separator: "--"
+) {
+ @include _css-class-var($names, $property, $class-prefix, $var-prefix);
+
+ @if $responsive {
+  $under-suffix: _class-suffix($suffix-under, $separator);
+  $over-suffix: _class-suffix($suffix-over, $separator);
+
+  @if $under-suffix != "" {
+   @include mq-under($breakpoint) {
+    @include _css-class-var(
+     $names,
+     $property,
+     $class-prefix,
+     $var-prefix,
+     $under-suffix
+    );
+   }
+  }
+
+  @if $over-suffix != "" {
+   @include mq($breakpoint) {
+    @include _css-class-var(
+     $names,
+     $property,
+     $class-prefix,
+     $var-prefix,
+     $over-suffix
+    );
+   }
+  }
+ }
+}
+
 // Genere les classes de spacing a partir d'une map de tailles.
-@mixin spacing-utilities($sizes) {
+@mixin _spacing-utilities($sizes, $class-suffix: "") {
  $spacing-utilities: (
   "p": padding,
   "pt": padding-top,
@@ -148,8 +235,36 @@
 
  @each $prefix, $property in $spacing-utilities {
   @each $name, $value in $sizes {
-   .#{$prefix}-#{$name} {
+   .#{$prefix}-#{$name}#{$class-suffix} {
     #{$property}: #{$value};
+   }
+  }
+ }
+}
+
+@mixin spacing-utilities(
+ $sizes,
+ $responsive: false,
+ $breakpoint: breakpoints.$breakpoint-md,
+ $suffix-under: "ubp",
+ $suffix-over: "obp",
+ $separator: "--"
+) {
+ @include _spacing-utilities($sizes);
+
+ @if $responsive {
+  $under-suffix: _class-suffix($suffix-under, $separator);
+  $over-suffix: _class-suffix($suffix-over, $separator);
+
+  @if $under-suffix != "" {
+   @include mq-under($breakpoint) {
+    @include _spacing-utilities($sizes, $under-suffix);
+   }
+  }
+
+  @if $over-suffix != "" {
+   @include mq($breakpoint) {
+    @include _spacing-utilities($sizes, $over-suffix);
    }
   }
  }
@@ -157,6 +272,12 @@
 
 // Media query - breakpoint
 // use -> @include mixins.mq { ... } ou @include mixins.mq(900px) { ... }
+@mixin mq-under($max-width: breakpoints.$breakpoint-md) {
+ @media (width < #{$max-width}) {
+  @content;
+ }
+}
+
 @mixin mq($min-width: breakpoints.$breakpoint-md) {
  @media (width >= #{$min-width}) {
   @content;

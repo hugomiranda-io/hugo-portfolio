@@ -3,3 +3,31 @@
 .heading {
  @include typography.heading-base;
 }
+
+.heading--1 {
+ font-size: var(--font-size-3);
+}
+
+.heading--2 {
+ font-size: var(--font-size-2_25);
+}
+
+.heading--3 {
+ font-size: var(--font-size-1_875);
+}
+
+.heading--4 {
+ font-size: var(--font-size-1_5);
+}
+
+.heading--5 {
+ font-size: var(--font-size-1_25);
+}
+
+.heading--6 {
+ font-size: var(--font-size-1_125);
+}
+
+.heading--regular {
+ font-weight: 400;
+}

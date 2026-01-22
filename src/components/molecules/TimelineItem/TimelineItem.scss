@@ -34,7 +34,6 @@
    display: flex;
    flex-direction: row;
    gap: var(--size-xs);
-   color: var(--color-text-muted);
    @include mixins.mq {
     flex-direction: column;
     gap: initial;

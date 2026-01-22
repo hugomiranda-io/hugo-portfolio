@@ -1,5 +1,5 @@
 import "./Hero.scss";
-import { Logo } from "@components";
+import { Logo, Text } from "@components";
 import { HERO_DATA } from "@data";
 
 export default function Hero() {
@@ -15,9 +15,7 @@ export default function Hero() {
     </div>
     <div className="flex flex-col gap-xs">
      {HERO_DATA.text.map((paragraph, index) => (
-      <p className="text-muted" key={index}>
-       {paragraph}
-      </p>
+      <Text key={index} as="p" color="muted" text={paragraph} />
      ))}
     </div>
    </div>

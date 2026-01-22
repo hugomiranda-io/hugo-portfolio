@@ -6,7 +6,7 @@ import {
 } from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 
-import { Icon } from "@components";
+import { Icon, Text } from "@components";
 
 import type { TimelineItemProps } from "@types";
 
@@ -22,14 +22,14 @@ export default function TimelineItem(props: TimelineItemProps) {
     <AccordionTriggerRadix className="timeline-item__trigger">
      <div className="timeline-item__info">
       <div className="timeline-item__period">
-       <span>{startPeriod}</span>
-       <span>{endPeriod}</span>
+       <Text as="p" color="muted" text={startPeriod} />
+       <Text as="p" color="muted" text={endPeriod} />
       </div>
       <div className="timeline-item__details">
-       <span className="font-weight-500">{title}</span>
+       <Text as="p" color="strong" fontWeight="strong" text={title} />
        <div className="timeline-item__agency">
-        <span>{organization}</span>
-        <span className="text-low-contrast">{location}</span>
+        <Text as="p" color="strong" text={organization} />
+        <Text as="p" color="muted" text={location} />
        </div>
       </div>
      </div>
@@ -50,13 +50,13 @@ export default function TimelineItem(props: TimelineItemProps) {
     <div className="timeline-item__trigger">
      <div className="timeline-item__info">
       <div className="timeline-item__period">
-       <span>{endPeriod}</span>
+       <Text as="p" color="muted" text={endPeriod} />
       </div>
       <div className="timeline-item__details">
-       <span className="font-weight-500">{title}</span>
+       <Text as="p" color="strong" fontWeight="strong" text={title} />
        <div className="timeline-item__agency">
-        <span>{organization}</span>
-        <span className="text-low-contrast">{location}</span>
+        <Text as="p" color="strong" text={organization} />
+        <Text as="p" color="muted" text={location} />
        </div>
       </div>
      </div>

@@ -30,8 +30,8 @@ export default function Tile(props: TileProps) {
     <Icon icon={IconTile} size="lg" color="strong" />
    </div>
    <div className="flex flex-col p-md">
-    <Heading as="H3" color="strong" label={title} />
-    <Heading as="H3" color="muted" label={description} />
+    <Heading as="h3" color="strong" label={title} />
+    <Heading as="h3" color="muted" fontWeight="regular" label={description} />
    </div>
   </div>
  );
