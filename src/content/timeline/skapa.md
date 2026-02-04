@@ -7,19 +7,18 @@ organization: Skapa
 location: Paris, France
 ---
 
-Skapa est une agence de design spécialiste de l’innovation et des produits métiers.
-
-En tant que stagiaire UI & front-end, j’ai participé à la création d’interfaces visuelles et à leur implémentation en HTML/CSS/JavaScript, avec un fort accent sur la collaboration client.
+Skapa est une agence de design spécialisée dans l'innovation et les produits métiers.
+En tant que UI Designer & Développeur front-end, j'ai participé à la conception d'interfaces visuelles et à leur implémentation technique, en collaboration directe avec les clients.
 
 ### Attributions
 
 <div class="list-dot">
 
-- Création et mise à jour de maquettes sur Sketch en lien direct avec les clients;
-- Intégration front-end d’une interface responsive (HTML/CSS/JS) destinée à devenir une Progressive Web App;
-- Présentation d’un projet lors d’un salon professionnel;
-- Rédaction de documentation technique pour faciliter la transmission au développement;
-- Application des bonnes pratiques en responsive design et compatibilité navigateurs;
+- Conçu et itéré des maquettes UI sur Sketch en collaboration directe avec les clients pour valider les choix graphiques et l'expérience utilisateur;
+- Développé une interface responsive complète (HTML5/CSS3/JavaScript ES6) pour une Progressive Web App, assurant la compatibilité mobile et desktop;
+- Présenté le projet lors d'un salon professionnel, démontrant les fonctionnalités et valorisant le travail de l'équipe auprès de prospects;
+- Rédigé une documentation technique détaillée (couleurs, espacements, typographie, comportements responsive mobile et desktop) pour faciliter la transmission aux équipes de développement;
+- Effectué des tests visuels, responsive et cross-browser systématiques avant chaque livraison client;
 
 </div>
 
@@ -27,14 +26,16 @@ En tant que stagiaire UI & front-end, j’ai participé à la création d’inte
 
 <div class="list-badge">
 
-- HTML / CSS
-- JavaScript
-- PWA (Progressive Web App)
 - Sketch
-- Git
-- Accessibilité
-- Design system
-- Méthodologies agiles
-- Documentation fonctionnelle & technique
+- UI Design
+- Wireframing
+- Prototypage
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Progressive Web App
+- Responsive Design
+- Tests cross-browser
+- Documentation technique
 
 </div>

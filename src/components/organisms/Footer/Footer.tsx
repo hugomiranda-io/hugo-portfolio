@@ -18,7 +18,7 @@ export default function Footer() {
        Je suis toujours ouvert aux échanges — projets, collaborations ou simples idées. Écrivez-moi
        !
       </Text>
-      <Cta as="a" href="mailto:contact@contact.com" variant="primary">
+      <Cta as="a" href="mailto:contact@hugomiranda.io" variant="primary">
        Contact
       </Cta>
      </div>

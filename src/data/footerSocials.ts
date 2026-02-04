@@ -6,31 +6,31 @@ export const FOOTERSOCIALS_DATA: FooterSocialLink[] = [
  {
   as: "a",
   externalLink: true,
-  href: "https://www.linkedin.com/in/hugocsmiranda/",
+  href: "https://www.linkedin.com/in/hugomiranda-io",
   label: "LinkedIn",
  },
  {
   as: "a",
   externalLink: true,
-  href: "https://github.com/hugocsmiranda",
+  href: "https://github.com/hugomiranda-io",
   label: "Github",
  },
  {
   as: "a",
   externalLink: true,
-  href: "https://www.figma.com/@hugomiranda",
+  href: "https://www.figma.com/@hugomiranda_io",
   label: "Figma",
  },
  {
   as: "a",
   externalLink: true,
-  href: "https://dribbble.com/hugocsmiranda",
+  href: "https://dribbble.com/hugomiranda-io",
   label: "Dribbble",
  },
  {
   as: "a",
   externalLink: true,
-  href: "https://www.instagram.com/hugocsmir/",
+  href: "https://www.instagram.com/hugomiranda_io",
   label: "Instagram",
  },
 ];
