@@ -58,8 +58,8 @@ export default function Text(props: TextProps) {
 
  const mergedClassName = [
   "text",
-  fontSize === "small" && "text--small",
-  fontWeight === "strong" && "text--strong",
+  fontSize === "small" && "text-small",
+  fontWeight === "strong" && "text-strong",
   `text-${color}`,
   className,
  ]

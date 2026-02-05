@@ -26,8 +26,8 @@ export default function Heading(props: HeadingProps) {
 
  const mergedClassName = [
   "heading",
-  resolvedSize && `heading--${resolvedSize.slice(1)}`,
-  fontWeight === "regular" && "heading--regular",
+  resolvedSize && `heading-${resolvedSize.slice(1)}`,
+  fontWeight === "regular" && "heading-regular",
   `text-${color}`,
   className,
  ]

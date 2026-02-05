@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./Navbar.scss";
 import type { NavbarProps } from "@types";
 
 export default function Navbar(props: NavbarProps) {
