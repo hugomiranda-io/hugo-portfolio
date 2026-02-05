@@ -7,19 +7,21 @@ export default function Icon(props: IconProps) {
  const classes = ["icon"];
 
  if (size === "sm") {
-  classes.push("icon-size--sm");
+  classes.push("icon-sm");
  } else if (size === "lg") {
-  classes.push("icon-size--lg");
+  classes.push("icon-lg");
+ } else if (size === "xl") {
+  classes.push("icon-xl");
  } else {
-  classes.push("icon-size--md");
+  classes.push("icon-md");
  }
 
  if (color === "muted") {
-  classes.push("icon-color--muted");
+  classes.push("icon-muted");
  } else if (color === "inverse") {
-  classes.push("icon-color--inverse");
+  classes.push("icon-inverse");
  } else {
-  classes.push("icon-color--strong");
+  classes.push("icon-strong");
  }
 
  return (

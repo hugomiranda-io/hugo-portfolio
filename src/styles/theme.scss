@@ -45,6 +45,13 @@ $text-color-aliases: (
  "disabled": var(--color-neutral-7),
 );
 
+$icon-size-aliases: (
+ "sm": var(--size-md),
+ "md": var(--size-xl),
+ "lg": var(--size-2xl),
+ "xl": var(--size-3xl),
+);
+
 @layer theme {
  :root {
   /* COLORS */
@@ -65,9 +72,7 @@ $text-color-aliases: (
   --radius-outside-xl: var(--size-xl);
   --radius-rounded: 9999rem;
   //icon
-  --icon-sm: var(--size-md);
-  --icon-md: var(--size-xl);
-  --icon-lg: var(--size-2xl);
+  @include mixins.css-variables($icon-size-aliases, "icon-size");
   --icon-stroke-width: 1.5;
 
   /* TYPOGRAPHIE */

@@ -71,43 +71,22 @@ $font-weight-values: (
  @include mixins.css-class($display-values, "display", $responsive: true);
 
  /* Générer des classes utilitaires gap */
- @include mixins.css-class-var(
-  theme.$size-aliases,
-  "gap",
-  "gap",
-  "size",
-  $responsive: true
- );
+ @include mixins.css-class-var(theme.$size-aliases, "gap", "gap", "size", $responsive: true);
 
  /* Générer des classes utilitaires justify-content */
  @include mixins.css-class($justify-values, "justify-content", "justify", $responsive: true);
 
  /* Générer des classes utilitaires flex-direction */
- @include mixins.css-class(
-  $flex-direction-values,
-  "flex-direction",
-  "flex",
-  $responsive: true
- );
+ @include mixins.css-class($flex-direction-values, "flex-direction", "flex", $responsive: true);
 
  /* Générer des classes utilitaires flex-wrap */
  @include mixins.css-class($flex-wrap-values, "flex-wrap", "flex", $responsive: true);
 
  /* Générer des classes utilitaires align-content */
- @include mixins.css-class(
-  $align-content-values,
-  "align-content",
-  "content",
-  $responsive: true
- );
+ @include mixins.css-class($align-content-values, "align-content", "content", $responsive: true);
 
  /* Générer des classes utilitaires align-items */
- @include mixins.css-class(
-  $align-items-values,
-  "align-items",
-  "items",
-  $responsive: true
- );
+ @include mixins.css-class($align-items-values, "align-items", "items", $responsive: true);
 
  /* Générer des classes utilitaires surface */
  @include mixins.css-class(
@@ -129,18 +108,11 @@ $font-weight-values: (
  @include mixins.css-class($font-weight-values, "font-weight", "font", $responsive: true);
 
  /* Générer des classes utilitaires text color */
- @include mixins.css-class(
-  theme.$text-color-aliases,
-  "color",
-  "text",
-  $responsive: true
- );
+ @include mixins.css-class(theme.$text-color-aliases, "color", "text", $responsive: true);
 
  /* Générer des classes utilitaires icon color */
- @include mixins.css-class(
-  theme.$text-color-aliases,
-  "stroke",
-  "icon",
-  $responsive: true
- );
+ @include mixins.css-class(theme.$text-color-aliases, "color", "icon", $responsive: true);
+
+ /* Générer des classes utilitaires icon size */
+ @include mixins.css-class(theme.$icon-size-aliases, "width", "icon-size", $responsive: true);
 }

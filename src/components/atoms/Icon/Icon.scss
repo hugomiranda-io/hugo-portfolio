@@ -3,26 +3,31 @@
   stroke-width: var(--icon-stroke-width);
  }
 
- &.icon-size--sm svg {
-  height: var(--size-md);
-  width: var(--size-md);
+ &.icon-sm svg {
+  height: var(--icon-size-sm);
+  width: var(--icon-size-sm);
  }
- &.icon-size--md svg {
-  height: var(--size-xl);
-  width: var(--size-xl);
+ &.icon-md svg {
+  height: var(--icon-size-md);
+  width: var(--icon-size-md);
  }
- &.icon-size--lg svg {
-  height: var(--size-2xl);
-  width: var(--size-2xl);
+ &.icon-lg svg {
+  height: var(--icon-size-lg);
+  width: var(--icon-size-lg);
  }
 
- &.icon-color--muted svg {
+ &.icon-xl svg {
+  height: var(--icon-size-xl);
+  width: var(--icon-size-xl);
+ }
+
+ &.icon-muted svg {
   stroke: var(--color-icon-muted);
  }
- &.icon-color--strong svg {
+ &.icon-strong svg {
   stroke: var(--color-icon-strong);
  }
- &.icon-color--inverse svg {
+ &.icon-inverse svg {
   stroke: var(--color-icon-inverse);
  }
 }

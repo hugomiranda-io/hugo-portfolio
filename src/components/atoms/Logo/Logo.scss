@@ -1,24 +1,24 @@
 .logo {
- &.logo-size--sm {
-  height: var(--size-md);
-  width: var(--size-md);
+ &.logo-sm {
+  height: var(--icon-size-sm);
+  width: var(--icon-size-sm);
  }
- &.logo-size--md {
-  height: var(--size-xl);
-  width: var(--size-xl);
+ &.logo-md {
+  height: var(--icon-size-md);
+  width: var(--icon-size-md);
  }
- &.logo-size--lg {
-  height: var(--size-2xl);
-  width: var(--size-2xl);
- }
-
- &.logo-size--xl {
-  height: var(--size-3xl);
-  width: var(--size-3xl);
+ &.logo-lg {
+  height: var(--icon-size-lg);
+  width: var(--icon-size-lg);
  }
 
- &.logo-color--muted {
-  & .bg {
+ &.logo-xl {
+  height: var(--icon-size-xl);
+  width: var(--icon-size-xl);
+ }
+
+ &.logo-muted {
+  & .surface-logo {
    fill: var(--color-surface-interactive);
   }
   & .path {
@@ -26,8 +26,8 @@
   }
  }
 
- &.logo-color--strong {
-  & .bg {
+ &.logo-strong {
+  & .surface-logo {
    fill: var(--color-surface-inverse);
   }
   & .path {

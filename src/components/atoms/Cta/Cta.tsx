@@ -27,13 +27,13 @@ export default function Cta(props: CtaProps) {
 
  const content = children ?? label;
  const mergedClassName = ["btn", `btn-${variant}`, className].filter(Boolean).join(" ");
- const iconClassName = variant === "primary" ? "theme" : "high";
+ const iconClassName = variant === "primary" ? "inverse" : "strong";
 
  const innerContent = (
   <>
-   {LeftIcon ? <Icon icon={LeftIcon} size="sm" priority={iconClassName} /> : null}
+   {LeftIcon ? <Icon icon={LeftIcon} size="sm" color={iconClassName} /> : null}
    <span className="btn__label">{content}</span>
-   {RightIcon ? <Icon icon={RightIcon} size="sm" priority={iconClassName} /> : null}
+   {RightIcon ? <Icon icon={RightIcon} size="sm" color={iconClassName} /> : null}
   </>
  );
 

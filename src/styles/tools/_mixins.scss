@@ -139,13 +139,7 @@
 }
 
 // Genere des classes utilitaires vers des CSS vars (ex: --size-3xs).
-@mixin _css-class-var(
- $names,
- $property,
- $class-prefix,
- $var-prefix,
- $class-suffix: ""
-) {
+@mixin _css-class-var($names, $property, $class-prefix, $var-prefix, $class-suffix: "") {
  $keys: $names;
 
  @if meta.type-of($names) == "map" {
@@ -190,25 +184,13 @@
 
   @if $under-suffix != "" {
    @include mq-under($breakpoint) {
-    @include _css-class-var(
-     $names,
-     $property,
-     $class-prefix,
-     $var-prefix,
-     $under-suffix
-    );
+    @include _css-class-var($names, $property, $class-prefix, $var-prefix, $under-suffix);
    }
   }
 
   @if $over-suffix != "" {
    @include mq($breakpoint) {
-    @include _css-class-var(
-     $names,
-     $property,
-     $class-prefix,
-     $var-prefix,
-     $over-suffix
-    );
+    @include _css-class-var($names, $property, $class-prefix, $var-prefix, $over-suffix);
    }
   }
  }
