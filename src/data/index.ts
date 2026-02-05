@@ -1,6 +1,3 @@
-export { NAVBAR_DATA } from "./navbar";
-export { KEYHIGHLIGHTS_DATA } from "./keyHighlights";
-export { KEYSOCIALS_DATA } from "./keySocials";
-export { FOOTERSOCIALS_DATA } from "./footerSocials";
-export { HERO_DATA } from "./hero";
-export { INTROTEXT_DATA } from "./introText";
+export { NAVBAR_DATA } from "./navigation";
+export { KEYHIGHLIGHTS_DATA, PROFILE_DATA } from "./profile";
+export { LINKS } from "./socials";

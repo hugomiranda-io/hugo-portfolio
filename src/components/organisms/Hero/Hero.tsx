@@ -1,6 +1,6 @@
 import "./Hero.scss";
 import { Logo, Text } from "@components";
-import { HERO_DATA } from "@data";
+import { PROFILE_DATA } from "@data";
 
 export default function Hero() {
  return (
@@ -9,12 +9,12 @@ export default function Hero() {
     <div className="flex flex-row gap-md mt-2xl mb-2xl">
      <Logo size="xl" color="strong" />
      <div className="flex flex-col justify-center">
-      <h2 className="heading text-strong">{HERO_DATA.title}</h2>
-      <h3 className="heading text-muted">{HERO_DATA.subtitle}</h3>
+      <h2 className="heading text-strong">{PROFILE_DATA.name}</h2>
+      <h3 className="heading text-muted">{PROFILE_DATA.job}</h3>
      </div>
     </div>
     <div className="flex flex-col gap-xs">
-     {HERO_DATA.text.map((paragraph, index) => (
+     {PROFILE_DATA.shortDescription.map((paragraph, index) => (
       <Text key={index} as="p" color="muted" text={paragraph} />
      ))}
     </div>

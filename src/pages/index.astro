@@ -1,13 +1,29 @@
 ---
 import { Hero, TileGroup } from "@components";
-import { KEYHIGHLIGHTS_DATA, KEYSOCIALS_DATA } from "@data";
+import { KEYHIGHLIGHTS_DATA, LINKS } from "@data";
 import Layout from "@layouts/Layout.astro";
+
+import type { TileProps } from "@types";
+
+const featuredSocials = ["github", "figma", "dribbble"] as const;
+
+const keySocialTiles: TileProps[] = featuredSocials.map((key) => {
+ const item = LINKS.socials[key];
+ return {
+  as: "a" as const,
+  externalLink: true,
+  href: item.href,
+  title: item.label,
+  description: item.description,
+  icon: item.icon,
+ };
+});
 ---
 
 <Layout>
  <div class="flex flex-col gap-5xl">
   <Hero />
   <TileGroup data={KEYHIGHLIGHTS_DATA} />
-  <TileGroup title="Mes profils" data={KEYSOCIALS_DATA} />
+  <TileGroup title="Mes profils" data={keySocialTiles} />
  </div>
 </Layout>

@@ -2,7 +2,7 @@ import "./IntroText.scss";
 import { Download } from "lucide-react";
 
 import { Cta, Text } from "@components";
-import { INTROTEXT_DATA } from "@data";
+import { PROFILE_DATA } from "@data";
 
 export default function IntroText() {
  const cvPath = "/cv/CV_HugoMiranda_DevFrontEnd_UiDesigner.pdf";
@@ -10,7 +10,7 @@ export default function IntroText() {
  return (
   <>
    <div className="flex flex-col gap-xs">
-    {INTROTEXT_DATA.text.map((paragraph, index) => (
+    {PROFILE_DATA.longDescription.map((paragraph, index) => (
      <Text key={index} as="p" text={paragraph} color="muted" />
     ))}
    </div>
