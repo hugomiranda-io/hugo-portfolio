@@ -1,5 +1,5 @@
 import "./Hero.scss";
-import { Logo, Text } from "@components";
+import { Heading, Logo, Text } from "@components";
 import { PROFILE_DATA } from "@data";
 
 export default function Hero() {
@@ -9,8 +9,8 @@ export default function Hero() {
     <div className="flex flex-row gap-md mt-2xl mb-2xl">
      <Logo size="xl" color="strong" />
      <div className="flex flex-col justify-center">
-      <h2 className="heading text-strong">{PROFILE_DATA.name}</h2>
-      <h3 className="heading text-muted">{PROFILE_DATA.job}</h3>
+      <Heading as="h2" label={PROFILE_DATA.name} />
+      <Heading as="h3" color="muted" label={PROFILE_DATA.job} />
      </div>
     </div>
     <div className="flex flex-col gap-xs">

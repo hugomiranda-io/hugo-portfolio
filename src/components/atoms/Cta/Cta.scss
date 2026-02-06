@@ -6,6 +6,7 @@
  gap: var(--size-2xs);
  padding: var(--size-xs) var(--size-lg);
  border-radius: var(--radius-inside);
+ transition: 0.2s;
 
  &.btn-primary {
   color: var(--color-text-inverse);

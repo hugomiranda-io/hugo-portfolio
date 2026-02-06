@@ -1,4 +1,4 @@
-import { Earth } from "lucide-react";
+import { Earth, Mail } from "lucide-react";
 
 import { Cta, Heading, Icon, Logo, Text } from "@components";
 import "./Footer.scss";
@@ -13,7 +13,7 @@ export default function Footer() {
    <div className="container-app mx-auto container-grid">
     <div id="contact" className="contact-card">
      <div className="contact-card__header">
-      <Icon icon={emailLink.icon} size="lg" color="strong" />
+      <Icon icon={Mail} size="lg" color="strong" />
       <Heading as="h4">Contact</Heading>
      </div>
      <div className="contact-card__body ">
@@ -21,7 +21,7 @@ export default function Footer() {
        Je suis toujours ouvert aux échanges — projets, collaborations ou simples idées. Écrivez-moi
        !
       </Text>
-      <Cta as="a" href={emailLink.href} variant="primary" wide>
+      <Cta as="a" href={emailLink.href} variant="primary" leftIcon={emailLink.icon} wide>
        {emailLink.description}
       </Cta>
      </div>

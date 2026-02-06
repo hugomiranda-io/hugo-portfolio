@@ -1,4 +1,4 @@
-import { Dribbble, Figma, Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { Dribbble, Figma, Github, Instagram, Linkedin, MessagesSquare } from "lucide-react";
 
 import type { ComponentType } from "react";
 
@@ -50,7 +50,7 @@ export const LINKS: {
    label: "Email",
    href: "mailto:contact@hugomiranda.io",
    description: "Écrivez-moi",
-   icon: Mail,
+   icon: MessagesSquare,
   },
  },
 };
