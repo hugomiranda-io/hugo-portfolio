@@ -11,7 +11,8 @@
    "@components": ["./src/components"],
    "@types": ["./src/types"],
    "@data": ["./src/data"],
-   "@styles/*": ["./src/styles/*"]
+   "@styles/*": ["./src/styles/*"],
+   "@utils/*": ["./src/utils/*"]
   }
  }
 }

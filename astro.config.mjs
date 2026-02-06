@@ -11,13 +11,22 @@ export default defineConfig({
  build: {
   inlineStylesheets: "never",
  },
- integrations: [react()],
- vite: {
-  resolve: {
-   dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
+  integrations: [react()],
+  vite: {
+    resolve: {
+    alias: {
+     "@components": "/src/components",
+     "@data": "/src/data",
+     "@layouts": "/src/layouts",
+     "@pages": "/src/pages",
+     "@styles": "/src/styles",
+     "@types": "/src/types",
+     "@utils": "/src/utils",
+    },
+    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
+    },
+    define: {
+     "process.env.NODE_ENV": JSON.stringify(isDev ? "development" : "production"),
+    },
   },
-  define: {
-   "process.env.NODE_ENV": JSON.stringify(isDev ? "development" : "production"),
-  },
- },
 });

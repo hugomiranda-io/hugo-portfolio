@@ -29,14 +29,20 @@ export default [
  {
   files: ["**/*.{js,jsx,ts,tsx,astro}"],
   plugins: { import: importPlugin },
-  settings: {
-   "import/resolver": { typescript: true },
+ settings: {
+   "import/resolver": {
+    typescript: {
+     project: "./tsconfig.json",
+    },
+   },
   },
   rules: {
    "import/order": [
     "error",
     {
      groups: ["builtin", "external", "internal", "parent", "sibling", "index", "type"],
+     pathGroups: [{ pattern: "@**", group: "internal" }],
+     pathGroupsExcludedImportTypes: ["builtin"],
      "newlines-between": "always",
      alphabetize: { order: "asc", caseInsensitive: true },
     },

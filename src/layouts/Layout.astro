@@ -25,6 +25,6 @@ const currentPath = Astro.url.pathname;
   <main class="container-app mx-auto pt-5xl pb-5xl">
    <slot />
   </main>
-  <Footer />
+  <Footer currentPath={currentPath} />
  </body>
 </html>
