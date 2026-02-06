@@ -1,10 +1,11 @@
 .btn {
+ width: fit-content;
  display: inline-flex;
  align-items: center;
  justify-content: center;
  gap: var(--size-2xs);
- padding: var(--size-xs) var(--size-sm);
- border-radius: var(--radius-default);
+ padding: var(--size-xs) var(--size-lg);
+ border-radius: var(--radius-inside);
 
  &.btn-primary {
   color: var(--color-text-inverse);
@@ -14,6 +15,10 @@
  &.btn-soft {
   color: var(--color-text-strong);
   background-color: var(--color-surface-interactive);
+ }
+
+ &.btn__wide {
+  width: auto;
  }
 
  & .btn__label {

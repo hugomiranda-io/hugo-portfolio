@@ -8,6 +8,7 @@ type CommonProps = {
  rightIcon?: ComponentType;
  className?: string;
  externalLink?: boolean;
+ wide?: boolean;
 };
 
 type ButtonElementProps = {

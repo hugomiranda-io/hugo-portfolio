@@ -22,11 +22,14 @@ export default function Cta(props: CtaProps) {
   className,
   as = "button",
   externalLink = false,
+  wide = false,
   ...rest
  } = props;
 
  const content = children ?? label;
- const mergedClassName = ["btn", `btn-${variant}`, className].filter(Boolean).join(" ");
+ const mergedClassName = ["btn", `btn-${variant}`, wide && "btn__wide", className]
+  .filter(Boolean)
+  .join(" ");
  const iconClassName = variant === "primary" ? "inverse" : "strong";
 
  const innerContent = (

@@ -21,7 +21,7 @@ export default function Footer() {
        Je suis toujours ouvert aux échanges — projets, collaborations ou simples idées. Écrivez-moi
        !
       </Text>
-      <Cta as="a" href={emailLink.href} variant="primary">
+      <Cta as="a" href={emailLink.href} variant="primary" wide>
        {emailLink.description}
       </Cta>
      </div>
@@ -40,6 +40,8 @@ export default function Footer() {
         href={item.href}
         externalLink
         label={item.label}
+        leftIcon={item.icon}
+        wide
        />
       ))}
      </div>
