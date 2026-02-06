@@ -1,7 +1,7 @@
-@use "../../../styles/tools/typography";
-
 .heading {
- @include typography.heading-base;
+ font-weight: var(--font-weight-bold);
+ line-height: var(--leading-snug);
+ color: var(--color-text-strong);
 }
 
 .heading-1 {
@@ -28,6 +28,10 @@
  font-size: var(--font-size-1_125);
 }
 
-.heading-regular {
- font-weight: 400;
+.heading__normal {
+ font-weight: var(--font-weight-normal);
+}
+
+.heading__muted {
+ color: var(--color-text-muted);
 }

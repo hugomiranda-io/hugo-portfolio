@@ -7,7 +7,6 @@ import {
 import { ChevronDown } from "lucide-react";
 
 import { Icon, Text } from "@components";
-
 import type { TimelineItemProps } from "@types";
 
 export default function TimelineItem(props: TimelineItemProps) {
@@ -26,7 +25,7 @@ export default function TimelineItem(props: TimelineItemProps) {
        <Text as="p" color="muted" text={endPeriod} />
       </div>
       <div className="timeline-item__details">
-       <Text as="p" color="strong" fontWeight="strong" text={title} />
+       <Text as="p" color="strong" fontWeight="bold" text={title} />
        <div className="timeline-item__agency">
         <Text as="p" color="strong" text={organization} />
         <Text as="p" color="muted" text={location} />
@@ -53,7 +52,7 @@ export default function TimelineItem(props: TimelineItemProps) {
        <Text as="p" color="muted" text={endPeriod} />
       </div>
       <div className="timeline-item__details">
-       <Text as="p" color="strong" fontWeight="strong" text={title} />
+       <Text as="p" color="strong" fontWeight="bold" text={title} />
        <div className="timeline-item__agency">
         <Text as="p" color="strong" text={organization} />
         <Text as="p" color="muted" text={location} />

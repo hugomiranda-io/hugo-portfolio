@@ -1,7 +1,7 @@
 import { Heading, Icon } from "@components";
-
 import "./Tile.scss";
 import type { TileProps } from "@types";
+
 import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
 
 function mergeExternalRel(rel?: string) {
@@ -31,7 +31,7 @@ export default function Tile(props: TileProps) {
    </div>
    <div className="flex flex-col p-md">
     <Heading as="h3" color="strong" label={title} />
-    <Heading as="h3" color="muted" fontWeight="regular" label={description} />
+    <Heading as="h3" color="muted" fontWeight="normal" label={description} />
    </div>
   </div>
  );

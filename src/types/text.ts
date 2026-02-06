@@ -9,6 +9,6 @@ export type TextProps = Omit<ComponentPropsWithoutRef<TextLevel>, "color" | "siz
  fontSize?: "default" | "small";
  text?: TextValue;
  children?: ReactNode;
- fontWeight?: "regular" | "strong";
+ fontWeight?: "normal" | "bold";
  color?: "muted" | "strong";
 };

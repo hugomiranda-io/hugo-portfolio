@@ -7,6 +7,6 @@ export type HeadingProps = Omit<HTMLAttributes<HTMLHeadingElement>, "color" | "s
  fontSize?: HeadingLevel;
  label?: string;
  children?: ReactNode;
- fontWeight?: "regular" | "strong";
+ fontWeight?: "normal" | "bold";
  color?: "muted" | "strong";
 };

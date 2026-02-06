@@ -1,13 +1,3 @@
-@mixin heading-base {
- font-weight: 500;
- line-height: var(--leading-snug);
-}
-
-@mixin paragraph-base {
- font-weight: 400;
- line-height: var(--leading-normal);
-}
-
 @mixin dot-list {
  display: flex;
  flex-direction: column;

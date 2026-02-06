@@ -14,7 +14,7 @@ export default function Heading(props: HeadingProps) {
   fontSize,
   label,
   children,
-  fontWeight = "strong",
+  fontWeight = "bold",
   color = "strong",
   className,
   ...rest
@@ -27,8 +27,8 @@ export default function Heading(props: HeadingProps) {
  const mergedClassName = [
   "heading",
   resolvedSize && `heading-${resolvedSize.slice(1)}`,
-  fontWeight === "regular" && "heading-regular",
-  `text-${color}`,
+  fontWeight === "normal" && "heading__normal",
+  color === "muted" && "heading__muted",
   className,
  ]
   .filter(Boolean)

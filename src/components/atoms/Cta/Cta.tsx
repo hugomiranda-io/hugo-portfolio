@@ -1,8 +1,8 @@
 import { Icon } from "@components";
+import type { CtaProps } from "@types";
 
 import "./Cta.scss";
 
-import type { CtaProps } from "@types";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
 function mergeExternalRel(rel?: string) {

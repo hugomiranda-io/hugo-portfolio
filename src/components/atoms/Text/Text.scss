@@ -1,13 +1,15 @@
-@use "../../../styles/tools/typography";
-
 .text {
- @include typography.paragraph-base;
-}
+ line-height: var(--leading-normal);
+ color: var(--color-text-muted);
+ font-weight: var(--font-weight-normal);
 
-.text-small {
- font-size: var(--font-size-sm);
-}
-
-.text-strong {
- font-weight: 500;
+ &.text-small {
+  font-size: var(--font-size-sm);
+ }
+ &.text-bold {
+  font-weight: var(--font-weight-bold);
+ }
+ &.text-strong {
+  color: var(--color-text-strong);
+ }
 }

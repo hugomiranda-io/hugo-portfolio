@@ -1,4 +1,5 @@
 import type { TextLevel, TextProps, TextValue } from "@types";
+
 import type { ReactNode } from "react";
 import "./Text.scss";
 
@@ -45,7 +46,7 @@ export default function Text(props: TextProps) {
   fontSize = "default",
   text,
   children,
-  fontWeight = "regular",
+  fontWeight = "normal",
   color = "strong",
   className,
   ...rest
@@ -59,8 +60,8 @@ export default function Text(props: TextProps) {
  const mergedClassName = [
   "text",
   fontSize === "small" && "text-small",
-  fontWeight === "strong" && "text-strong",
-  `text-${color}`,
+  fontWeight === "bold" && "text-bold",
+  color === "strong" && "text-strong",
   className,
  ]
   .filter(Boolean)

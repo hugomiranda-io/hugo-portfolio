@@ -89,6 +89,9 @@ $icon-size-aliases: (
   // font size
   --font-size: var(--font-size-1);
   --font-size-sm: var(--font-size-0_875);
+  // font width
+  --font-weight-normal: 400;
+  --font-weight-bold: 500;
 
   /* RESPONSIVE */
   --body-max-width: 100%;

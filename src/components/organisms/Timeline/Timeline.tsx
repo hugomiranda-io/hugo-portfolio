@@ -3,8 +3,8 @@ import "./Timeline.scss";
 import { Accordion as AccordionRadix } from "@radix-ui/react-accordion";
 
 import { Heading, MarkdownContent, TimelineItem } from "@components";
-
 import type { TimelineItemProps } from "@types";
+
 import type { ReactNode } from "react";
 
 type CareerTimelineItem = Omit<Extract<TimelineItemProps, { variant: "career" }>, "children"> & {
