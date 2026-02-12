@@ -5,6 +5,7 @@ export type { NavbarItemProps } from "./navbarItem";
 export type { HeadingLevel, HeadingProps } from "./heading";
 export type { TextLevel, TextProps, TextValue } from "./text";
 export type { LogoProps } from "./logo";
+export type { ListItemsProps, ListProps } from "./list";
 
 // Molecules
 export type {

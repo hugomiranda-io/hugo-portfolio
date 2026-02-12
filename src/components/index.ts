@@ -5,6 +5,7 @@ export { default as NavbarItem } from "./atoms/NavbarItem/NavbarItem";
 export { default as Heading } from "./atoms/Heading/Heading";
 export { default as Text } from "./atoms/Text/Text";
 export { default as Logo } from "./atoms/Logo/Logo";
+export { default as List } from "./atoms/List/List";
 // Molecules
 export { default as Tile } from "./molecules/Tile/Tile";
 export { default as Navbar } from "./molecules/Navbar/Navbar";
