@@ -18,3 +18,4 @@ export { default as Header } from "./organisms/Header/Header";
 export { default as Hero } from "./organisms/Hero/Hero";
 export { default as TileGroup } from "./organisms/TileGroup/TileGroup";
 export { default as IntroText } from "./organisms/IntroText/IntroText";
+export { default as StackList } from "./organisms/StackList/StackList";

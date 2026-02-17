@@ -20,3 +20,6 @@ export type { MarkdownContentProps } from "./markdownContent";
 
 // Organisms
 export type { TileGroupProps } from "./TileGroup";
+
+// Data
+export type { ProfileData, TechStackCategory } from "./profile";

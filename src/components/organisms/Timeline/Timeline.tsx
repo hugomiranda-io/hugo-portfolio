@@ -1,5 +1,3 @@
-import "./Timeline.scss";
-
 import { Accordion as AccordionRadix } from "@radix-ui/react-accordion";
 
 import { Heading, MarkdownContent, TimelineItem } from "@components";
@@ -27,7 +25,7 @@ export default function Timeline({ career, education }: TimelineProps) {
   <>
    <div className="flex flex-col gap-lg">
     <Heading as="h3" label="Expériences" />
-    <AccordionRadix type="single" collapsible className="timeline">
+    <AccordionRadix type="single" collapsible className="flex flex-col gap-md">
      {careerItems.map(({ contentHtml, content, ...item }) => (
       <TimelineItem
        key={item.id ?? `${item.organization}-${item.title}-${item.startPeriod}-${item.endPeriod}`}

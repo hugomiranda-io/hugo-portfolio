@@ -1,4 +1,3 @@
-import "./Hero.scss";
 import { Heading, Logo, Text } from "@components";
 import { PROFILE_DATA } from "@data";
 

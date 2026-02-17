@@ -1,5 +1,3 @@
-import "./TileGroup.scss";
-
 import { Heading, Tile } from "@components";
 import type { TileGroupProps } from "@types";
 

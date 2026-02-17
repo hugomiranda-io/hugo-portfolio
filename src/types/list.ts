@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export type ListItemsProps = Record<string, ReactNode> | ReactNode[];
+export type ListItemsProps = Record<string, ReactNode> | ReadonlyArray<ReactNode>;
 
 export type ListProps = {
  items: ListItemsProps;

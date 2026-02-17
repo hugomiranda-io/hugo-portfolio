@@ -2,7 +2,8 @@
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 import { getCollection } from "astro:content";
 
-import { IntroText, Timeline } from "@components";
+import { IntroText, StackList, Timeline } from "@components";
+import { PROFILE_DATA } from "@data";
 import Layout from "@layouts/Layout.astro";
 
 const timelineEntries = await getCollection("timeline");
@@ -40,5 +41,6 @@ const education = timelineEntries
 
 <Layout>
  <IntroText />
+ <StackList data={PROFILE_DATA.techStack} />
  <Timeline client:load career={career} education={education} />
 </Layout>
