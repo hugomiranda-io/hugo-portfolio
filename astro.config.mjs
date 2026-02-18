@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
 
+import sitemap from "@astrojs/sitemap";
+
 // Astro's `defineConfig` doesn't accept a callback; detect the current command via argv.
 const isDev = process.argv.includes("dev");
 
@@ -11,7 +13,7 @@ export default defineConfig({
  build: {
   inlineStylesheets: "never",
  },
-  integrations: [react()],
+  integrations: [react(), sitemap()],
   vite: {
     resolve: {
     alias: {
