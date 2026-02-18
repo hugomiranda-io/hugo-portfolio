@@ -7,7 +7,10 @@ const career = [...TIMELINE_DATA.career].sort((a, b) => b.startPeriod - a.startP
 const education = [...TIMELINE_DATA.education].sort((a, b) => b.endPeriod - a.endPeriod);
 ---
 
-<Layout>
+<Layout
+ title="Parcours & Expérience | Hugo Miranda - Dev Front-End"
+ description="5+ ans d'expérience en développement front-end chez Aliznet et Skapa. Expert React, TypeScript, Salesforce Lightning. Formations et compétences détaillées."
+>
  <IntroText />
  <StackList data={PROFILE_DATA.techStack} />
  <Timeline client:load career={career} education={education} />

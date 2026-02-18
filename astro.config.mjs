@@ -10,10 +10,18 @@ const isDev = process.argv.includes("dev");
 
 // https://astro.build/config
 export default defineConfig({
+ site: "https://hugomiranda.io",
  build: {
   inlineStylesheets: "never",
  },
-  integrations: [react(), sitemap()],
+ integrations: [
+  react(),
+  sitemap({
+   changefreq: "weekly",
+   priority: 0.7,
+   filter: (page) => !page.includes("/404"),
+  }),
+ ],
   vite: {
     resolve: {
     alias: {

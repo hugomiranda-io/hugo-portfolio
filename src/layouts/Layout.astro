@@ -1,22 +1,85 @@
 ---
 import Analytics from "@vercel/analytics/astro";
 import { ClientRouter } from "astro:transitions";
+import { SEO } from "astro-seo";
 
 import { Footer, Header } from "@components";
-// import "@styles/global.css";
 import "@styles/index.scss";
 
 const generator = Astro.generator;
 const currentPath = Astro.url.pathname;
+
+interface Props {
+ title: string;
+ description?: string;
+ canonical?: string;
+ noindex?: boolean;
+ ogImage?: string;
+ ogImageAlt?: string;
+}
+
+const {
+ title,
+ description,
+ canonical,
+ noindex = false,
+ ogImage = "/favicon.svg",
+ ogImageAlt = "Logo Hugo Miranda",
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const canonicalUrl = canonical
+ ? new URL(canonical, siteUrl).toString()
+ : new URL(`${Astro.url.pathname}${Astro.url.search}`, siteUrl).toString();
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
 ---
 
 <html lang="fr">
  <head>
+  <SEO
+   title={title}
+   description={description}
+   canonical={canonicalUrl}
+   noindex={noindex}
+   robotsExtras="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+   languageAlternates={[
+    { href: canonicalUrl, hrefLang: "fr-FR" },
+    { href: canonicalUrl, hrefLang: "x-default" },
+   ]}
+   openGraph={{
+    basic: {
+     title,
+     type: "website",
+     image: ogImageUrl,
+     url: canonicalUrl,
+    },
+    optional: {
+     description,
+     locale: "fr_FR",
+     siteName: "Hugo Miranda - Portfolio",
+    },
+    image: {
+     alt: ogImageAlt,
+    },
+   }}
+   twitter={{
+    card: "summary_large_image",
+    title,
+    description,
+    image: ogImageUrl,
+    imageAlt: ogImageAlt,
+   }}
+   extend={{
+    meta: [
+     { name: "author", content: "Hugo Miranda" },
+     { name: "theme-color", content: "#111111" },
+    ],
+   }}
+  />
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={generator} />
-  <title>Hugo Miranda - Portfolio</title>
   <Analytics />
   <ClientRouter />
  </head>
