@@ -5,6 +5,14 @@
  padding-inline-start: 0;
  gap: var(--size-2xs);
 
+ &.list--muted {
+  color: var(--color-text-muted);
+ }
+
+ &.list--strong {
+  color: var(--color-text-strong);
+ }
+
  &.list--dot {
   flex-direction: column;
   padding-inline-start: var(--size-md);

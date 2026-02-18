@@ -10,7 +10,6 @@ export { default as List } from "./atoms/List/List";
 export { default as Tile } from "./molecules/Tile/Tile";
 export { default as Navbar } from "./molecules/Navbar/Navbar";
 export { default as TimelineItem } from "./molecules/TimelineItem/TimelineItem";
-export { default as MarkdownContent } from "./molecules/MarkdownContent/MarkdownContent";
 // Organisms
 export { default as Timeline } from "./organisms/Timeline/Timeline";
 export { default as Footer } from "./organisms/Footer/Footer";

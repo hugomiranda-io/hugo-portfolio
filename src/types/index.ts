@@ -10,13 +10,16 @@ export type { ListItemsProps, ListProps } from "./list";
 // Molecules
 export type {
  CareerElementProps,
+ CareerTimelineDataItem,
  CommonProps,
+ EducationTimelineDataItem,
  EducationElementProps,
+ TimelineContent,
+ TimelineData,
  TimelineItemProps,
 } from "./timelineItem";
 export type { TileProps } from "./tile";
 export type { NavbarProps } from "./navbar";
-export type { MarkdownContentProps } from "./markdownContent";
 
 // Organisms
 export type { TileGroupProps } from "./TileGroup";

@@ -2,10 +2,10 @@ import type { ListProps } from "@types";
 import "./List.scss";
 
 export default function List(props: ListProps) {
- const { items, variant } = props;
+ const { items, variant, color = "strong" } = props;
  const entries = Array.isArray(items) ? items : Object.values(items);
 
- const mergedClassName = ["list", `list--${variant}`].join(" ");
+ const mergedClassName = ["list", `list--${variant}`, `list--${color}`].join(" ");
 
  return (
   <ul className={mergedClassName}>

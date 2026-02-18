@@ -5,4 +5,5 @@ export type ListItemsProps = Record<string, ReactNode> | ReadonlyArray<ReactNode
 export type ListProps = {
  items: ListItemsProps;
  variant: "dot" | "badge";
+ color?: "muted" | "strong";
 };

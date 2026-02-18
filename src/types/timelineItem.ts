@@ -7,6 +7,12 @@ export type CommonProps = {
  location: string;
 };
 
+export type TimelineContent = {
+ type: "paragraph" | "list-dot" | "list-badge";
+ title?: string;
+ values: string[];
+};
+
 export type CareerElementProps = {
  variant: "career";
  startPeriod: number;
@@ -23,3 +29,14 @@ export type EducationElementProps = {
 };
 
 export type TimelineItemProps = CommonProps & (CareerElementProps | EducationElementProps);
+
+export type CareerTimelineDataItem = Omit<CommonProps & CareerElementProps, "children"> & {
+ description: TimelineContent[];
+};
+
+export type EducationTimelineDataItem = CommonProps & EducationElementProps;
+
+export type TimelineData = {
+ career: CareerTimelineDataItem[];
+ education: EducationTimelineDataItem[];
+};
