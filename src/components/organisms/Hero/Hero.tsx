@@ -5,7 +5,7 @@ export default function Hero() {
  return (
   <>
    <div className="flex flex-col">
-    <div className="flex flex-row gap-md mt-2xl mb-2xl">
+    <div className="flex flex-row gap-md mb-2xl">
      <Logo size="xl" color="strong" />
      <div className="flex flex-col justify-center">
       <Heading as="h2" label={PROFILE_DATA.name} />
