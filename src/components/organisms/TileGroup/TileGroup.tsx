@@ -9,7 +9,7 @@ export default function TileGroup(props: TileGroupProps) {
    {title && <Heading as="h2">{title}</Heading>}
    <div className="container-grid">
     {data.map((item) => (
-     <Tile key={`key-highlight-${item.href ?? item.title}`} {...item} />
+     <Tile key={`key-highlight-${item.href ?? item.title}`} {...item} hasGroupTitle={Boolean(title)} />
     ))}
    </div>
   </div>

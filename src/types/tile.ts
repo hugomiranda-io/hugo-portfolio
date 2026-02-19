@@ -6,6 +6,7 @@ type CommonProps = {
  className?: string;
  icon: ComponentType;
  externalLink?: boolean;
+ hasGroupTitle?: boolean;
 };
 
 type AnchorTileElementProps = {

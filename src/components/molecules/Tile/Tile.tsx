@@ -19,6 +19,7 @@ export default function Tile(props: TileProps) {
   icon: IconTile,
   as = "div",
   externalLink = false,
+  hasGroupTitle = false,
   ...rest
  } = props;
 
@@ -30,7 +31,7 @@ export default function Tile(props: TileProps) {
     <Icon icon={IconTile} size="lg" color="strong" />
    </div>
    <div className="flex flex-col-reverse p-md">
-    <Heading as="h3" color="muted" fontWeight="normal" label={description} />
+    <Heading as={hasGroupTitle ? "h3" : "h2"} color="muted" fontWeight="normal" label={description} />
     <Text as="p" fontWeight="bold" text={title} />
    </div>
   </div>

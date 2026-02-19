@@ -27,9 +27,9 @@ export default [
 
  // Import order + resolver TS (alias, paths)
  {
-  files: ["**/*.{js,jsx,ts,tsx,astro}"],
+  files: ["**/*.{js,jsx,ts,tsx}"],
   plugins: { import: importPlugin },
- settings: {
+  settings: {
    "import/resolver": {
     typescript: {
      project: "./tsconfig.json",
