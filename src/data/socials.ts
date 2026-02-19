@@ -49,7 +49,7 @@ export const LINKS: {
   email: {
    label: "Email",
    href: "mailto:contact@hugomiranda.io",
-   description: "Écrivez-moi",
+   description: "Contact",
    icon: MessagesSquare,
   },
  },

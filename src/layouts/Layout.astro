@@ -23,8 +23,8 @@ const {
  description,
  canonical,
  noindex = false,
- ogImage = "/favicon.svg",
- ogImageAlt = "Logo Hugo Miranda",
+ ogImage = "/siteImage.png",
+ ogImageAlt = "Aperçu du site Hugo Miranda",
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
@@ -32,6 +32,38 @@ const canonicalUrl = canonical
  ? new URL(canonical, siteUrl).toString()
  : new URL(`${Astro.url.pathname}${Astro.url.search}`, siteUrl).toString();
 const ogImageUrl = new URL(ogImage, siteUrl).toString();
+const isDefaultOgImage = ogImage === "/siteImage.png";
+
+const personSchema = {
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "@id": "https://hugomiranda.io/#person",
+ name: "Hugo Miranda",
+ jobTitle: "Développeur Front-End & UI Designer",
+ url: "https://hugomiranda.io",
+ sameAs: [
+  "https://www.linkedin.com/in/hugomiranda-io",
+  "https://github.com/hugomiranda-io",
+  "https://www.figma.com/@hugomiranda_io",
+  "https://dribbble.com/hugomiranda-io",
+  "https://www.instagram.com/hugomiranda_io",
+ ],
+ address: {
+  "@type": "PostalAddress",
+  addressLocality: "Paris",
+  addressCountry: "FR",
+ },
+ knowsAbout: [
+  "JavaScript",
+  "React.js",
+  "TypeScript",
+  "Salesforce Lightning",
+  "Figma",
+  "UI Design",
+  "Accessibilité WCAG",
+  "Design Systems",
+ ],
+};
 ---
 
 <html lang="fr">
@@ -60,6 +92,13 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
     },
     image: {
      alt: ogImageAlt,
+     ...(isDefaultOgImage
+      ? {
+         type: "image/png",
+         width: 1200,
+         height: 630,
+        }
+      : {}),
     },
    }}
    twitter={{
@@ -72,10 +111,11 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
    extend={{
     meta: [
      { name: "author", content: "Hugo Miranda" },
-     { name: "theme-color", content: "#111111" },
+     { name: "theme-color", content: "#0c0c0c" },
     ],
    }}
   />
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width" />

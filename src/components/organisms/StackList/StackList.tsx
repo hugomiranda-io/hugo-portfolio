@@ -7,13 +7,16 @@ type StackListProps = {
 
 export default function StackList({ data }: StackListProps) {
  return (
-  <div className="flex flex-col gap-sm py-md">
-   {data.map((item) => (
-    <div className="flex flex-col gap-sm py-md" key={item.title}>
-     <Heading as="h3" label={item.title} />
-     <List items={item.data} variant="badge" />
-    </div>
-   ))}
+  <div className="flex flex-col gap-lg py-md">
+   <Heading as="h2" label="Compétences" />
+   <div className="flex flex-col gap-md">
+    {data.map((item) => (
+     <div className="flex flex-col gap-xs" key={item.title}>
+      <Heading as="h3" label={item.title} color="muted" />
+      <List items={item.data} variant="badge" />
+     </div>
+    ))}
+   </div>
   </div>
  );
 }
