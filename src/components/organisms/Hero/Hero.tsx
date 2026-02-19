@@ -9,7 +9,7 @@ export default function Hero() {
      <Logo size="xl" color="strong" />
      <div className="flex flex-col justify-center">
       <Heading as="h2" label={PROFILE_DATA.name} />
-      <Heading as="h3" color="muted" label={PROFILE_DATA.job} />
+      <Heading as="h1" color="muted" label={PROFILE_DATA.job} />
      </div>
     </div>
     <div className="flex flex-col gap-xs">

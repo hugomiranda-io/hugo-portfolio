@@ -14,7 +14,7 @@ export default function Footer() {
     <div id="contact" className="contact-card">
      <div className="contact-card__header">
       <Icon icon={Mail} size="lg" color="strong" />
-      <Heading as="h4">Contact</Heading>
+      <Heading as="h2">Contact</Heading>
      </div>
      <div className="contact-card__body ">
       <Text as="p" color="muted">
@@ -29,7 +29,7 @@ export default function Footer() {
     <div className="contact-card">
      <div className="contact-card__header">
       <Icon icon={Earth} size="lg" color="strong" />
-      <Heading as="h4">Présence en ligne</Heading>
+      <Heading as="h2">Présence en ligne</Heading>
      </div>
      <div className="contact-card__body ">
       {socialLinks.map((item) => (

@@ -6,7 +6,7 @@ export default function TileGroup(props: TileGroupProps) {
 
  return (
   <div className="flex flex-col gap-md">
-   {title && <Heading as="h3">{title}</Heading>}
+   {title && <Heading as="h2">{title}</Heading>}
    <div className="container-grid">
     {data.map((item) => (
      <Tile key={`key-highlight-${item.href ?? item.title}`} {...item} />

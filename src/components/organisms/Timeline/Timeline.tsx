@@ -15,7 +15,7 @@ export default function Timeline({ career, education }: TimelineProps) {
  const renderContentBlock = (content: TimelineContent, index: number) => {
   return (
    <div key={index} className="flex flex-col gap-sm">
-    {content.title ? <Heading as="h3" label={content.title} /> : null}
+    {content.title ? <Heading as="h4" label={content.title} /> : null}
     {content.type === "paragraph" ? (
      content.values.map((value, valueIndex) => (
       <Text key={`${index}-${valueIndex}`} as="p" color="muted" text={value} />
@@ -34,7 +34,7 @@ export default function Timeline({ career, education }: TimelineProps) {
  return (
   <>
    <div className="flex flex-col gap-lg">
-    <Heading as="h3" label="Expériences" />
+    <Heading as="h2" label="Expériences" />
     <AccordionRadix type="single" collapsible className="flex flex-col gap-md">
      {careerItems.map(({ description, ...item }) => (
       <TimelineItem
@@ -48,7 +48,7 @@ export default function Timeline({ career, education }: TimelineProps) {
    </div>
 
    <div className="flex flex-col gap-lg">
-    <Heading as="h3" label="Formations" />
+    <Heading as="h2" label="Formations" />
     {educationItems.map((item) => (
      <TimelineItem
       key={item.id ?? `${item.organization}-${item.title}-${item.endPeriod}`}

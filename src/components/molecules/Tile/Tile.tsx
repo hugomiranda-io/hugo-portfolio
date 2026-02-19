@@ -1,4 +1,4 @@
-import { Heading, Icon } from "@components";
+import { Heading, Icon, Text } from "@components";
 import "./Tile.scss";
 import type { TileProps } from "@types";
 
@@ -29,9 +29,9 @@ export default function Tile(props: TileProps) {
    <div className="tile__icon">
     <Icon icon={IconTile} size="lg" color="strong" />
    </div>
-   <div className="flex flex-col p-md">
-    <Heading as="h3" color="strong" label={title} />
+   <div className="flex flex-col-reverse p-md">
     <Heading as="h3" color="muted" fontWeight="normal" label={description} />
+    <Text as="p" fontWeight="bold" text={title} />
    </div>
   </div>
  );
