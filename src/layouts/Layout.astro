@@ -111,7 +111,9 @@ const personSchema = {
    extend={{
     meta: [
      { name: "author", content: "Hugo Miranda" },
-     { name: "theme-color", content: "#0c0c0c" },
+     { name: "theme-color", content: "#fcfcfd" },
+     { name: "theme-color", media: "(prefers-color-scheme: light)", content: "#fcfcfd" },
+     { name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#111113" },
     ],
    }}
   />
