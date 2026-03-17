@@ -1,15 +1,9 @@
 import { Heading, Icon, Text } from "@components";
 import "./Tile.scss";
 import type { TileProps } from "@types";
+import { resolveExternalLinkAttributes } from "@utils/links";
 
 import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
-
-function mergeExternalRel(rel?: string) {
- const tokens = new Set((rel ?? "").split(/\s+/).filter(Boolean));
- tokens.add("noopener");
- tokens.add("noreferrer");
- return Array.from(tokens).join(" ");
-}
 
 export default function Tile(props: TileProps) {
  const {
@@ -37,16 +31,22 @@ export default function Tile(props: TileProps) {
   </div>
  );
 
- if (as === "a") {
+  if (as === "a") {
   const { rel, target, ...anchorProps } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & {
    href: string;
    rel?: string;
    target?: string;
   };
-  const resolvedRel = externalLink ? mergeExternalRel(rel) : rel;
-  const resolvedTarget = externalLink ? "_blank" : target;
+  const resolved = resolveExternalLinkAttributes({ externalLink, rel, target });
   return (
-   <a className={mergedClassName} rel={resolvedRel} target={resolvedTarget} {...anchorProps}>
+   <a
+    className={mergedClassName}
+    rel={resolved.rel}
+    target={resolved.target}
+    aria-label={`${title}. ${description}`}
+    title={`${title}. ${description}`}
+    {...anchorProps}
+   >
     {innerContent}
    </a>
   );

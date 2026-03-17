@@ -1,4 +1,3 @@
-@use "sass:map";
 @use "sass:string";
 
 /* Substituition du "." par "_" */
@@ -14,21 +13,4 @@
  $after: string.slice($value-str, $dot-index + 1);
 
  @return "#{$before}_#{$after}";
-}
-
-/* Génére une map */
-@function scale-map($multipliers, $prefix) {
- $result: ();
-
- @each $multiplier in $multipliers {
-  $token: token-suffix($multiplier);
-  $result: map.merge(
-   $result,
-   (
-    $token: var(--#{$prefix}-#{$token}),
-   )
-  );
- }
-
- @return $result;
 }

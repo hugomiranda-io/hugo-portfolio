@@ -1,10 +1,10 @@
 ---
 import { Hero, TileGroup } from "@components";
-import { KEYHIGHLIGHTS_DATA, LINKS } from "@data";
+import { FEATURED_SOCIAL_LINKS, KEYHIGHLIGHTS_DATA, LINKS } from "@data";
 import Layout from "@layouts/Layout.astro";
 import type { TileProps } from "@types";
 
-const featuredSocials = ["github", "figma", "dribbble"] as const;
+const featuredSocials = FEATURED_SOCIAL_LINKS;
 
 const keySocialTiles: TileProps[] = featuredSocials.map((key) => {
  const item = LINKS.socials[key];

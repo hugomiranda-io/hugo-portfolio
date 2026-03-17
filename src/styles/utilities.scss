@@ -1,118 +1,121 @@
-@use "theme";
 @use "tools/mixins";
 
+/* Utilitaire pragmatique : générer uniquement les classes réellement utilisées.
+   Objectif: réduire la taille du CSS généré en supprimant les tokens inutilisés. */
 $display-values: (
- "block": block,
- "inline": inline,
- "inline-block": inline-block,
  "flex": flex,
- "inline-flex": inline-flex,
- "grid": grid,
- "inline-grid": inline-grid,
- "none": none,
 );
 
 $justify-values: (
- "start": start,
  "center": center,
- "between": space-between,
- "around": space-around,
- "evenly": space-evenly,
 );
 
 $flex-direction-values: (
- "row": row,
- "row-reverse": row-reverse,
  "col": column,
  "col-reverse": column-reverse,
-);
-
-$flex-wrap-values: (
- "wrap": wrap,
- "nowrap": nowrap,
- "wrap-reverse": wrap-reverse,
-);
-
-$align-content-values: (
- "start": flex-start,
- "center": center,
- "end": flex-end,
- "between": space-between,
- "around": space-around,
- "evenly": space-evenly,
- "stretch": stretch,
+ "row": row,
 );
 
 $align-items-values: (
- "start": flex-start,
  "center": center,
- "end": flex-end,
- "stretch": stretch,
- "baseline": baseline,
 );
 
-$font-weight-values: (
- "thin": 100,
- "extralight": 200,
- "light": 300,
- "normal": 400,
- "medium": 500,
- "semibold": 600,
- "bold": 700,
- "extrabold": 800,
- "black": 900,
+// Note: aucune classe flex-wrap n'est utilisée pour l'instant.
+$surface-color-aliases: (
+ "app": var(--color-surface-app),
+ "subtle": var(--color-surface-subtle),
+);
+
+// Spacings réellement utilisés dans le projet.
+$spacing-utilities: (
+ p: (
+  md: var(--size-md),
+ ),
+ pt: (
+  lg: var(--size-lg),
+  "4xl": var(--size-4xl),
+  "5xl": var(--size-5xl),
+ ),
+ pb: (
+  "4xl": var(--size-4xl),
+  "5xl": var(--size-5xl),
+ ),
+ py: (
+  md: var(--size-md),
+ ),
+ mb: (
+  "2xl": var(--size-2xl),
+ ),
+ mx: (
+  auto: auto,
+ ),
+);
+
+@mixin spacing-utilities($sizes) {
+ @each $prefix, $values in $sizes {
+  @each $name, $value in $values {
+   @if $prefix == "p" {
+    .#{$prefix}-#{$name} {
+     padding: #{$value};
+    }
+   } @else if $prefix == "pt" {
+    .#{$prefix}-#{$name} {
+     padding-top: #{$value};
+    }
+   } @else if $prefix == "pb" {
+    .#{$prefix}-#{$name} {
+     padding-bottom: #{$value};
+    }
+   } @else if $prefix == "py" {
+    .#{$prefix}-#{$name} {
+     padding-block: #{$value};
+    }
+   } @else if $prefix == "mb" {
+    .#{$prefix}-#{$name} {
+     margin-bottom: #{$value};
+    }
+   } @else if $prefix == "mx" {
+    .#{$prefix}-#{$name} {
+     margin-inline: #{$value};
+    }
+   }
+  }
+ }
+}
+
+$gap-utilities: (
+ "xs": var(--size-xs),
+ "sm": var(--size-sm),
+ "md": var(--size-md),
+ "lg": var(--size-lg),
+ "4xl": var(--size-4xl),
+ "5xl": var(--size-5xl),
 );
 
 @layer utilities {
- /* Générer des classes padding et margin*/
- @include mixins.spacing-utilities(theme.$size-aliases, $responsive: true);
+  /* Espace (padding/margin) utilisés dans le layout principal. */
+  @include spacing-utilities($spacing-utilities);
 
- /* Générer des classes utilitaires display */
- @include mixins.css-class($display-values, "display", $responsive: true);
+  /* Générer des classes utilitaires display */
+  @include mixins.css-class($display-values, "display", null, $responsive: false);
 
- /* Générer des classes utilitaires gap */
- @include mixins.css-class-var(theme.$size-aliases, "gap", "gap", "size", $responsive: true);
+  /* Générer des classes utilitaires gap */
+  @include mixins.css-class-var($gap-utilities, "gap", "gap", "size", $responsive: false);
 
- /* Générer des classes utilitaires justify-content */
- @include mixins.css-class($justify-values, "justify-content", "justify", $responsive: true);
+  /* Générer des classes utilitaires justify-content */
+  @include mixins.css-class($justify-values, "justify-content", "justify", $responsive: false);
 
- /* Générer des classes utilitaires flex-direction */
- @include mixins.css-class($flex-direction-values, "flex-direction", "flex", $responsive: true);
+  /* Générer des classes utilitaires flex-direction */
+  @include mixins.css-class($flex-direction-values, "flex-direction", "flex", $responsive: false);
 
- /* Générer des classes utilitaires flex-wrap */
- @include mixins.css-class($flex-wrap-values, "flex-wrap", "flex", $responsive: true);
+  /* Générer des classes utilitaires align-items */
+  @include mixins.css-class($align-items-values, "align-items", "items", $responsive: false);
 
- /* Générer des classes utilitaires align-content */
- @include mixins.css-class($align-content-values, "align-content", "content", $responsive: true);
-
- /* Générer des classes utilitaires align-items */
- @include mixins.css-class($align-items-values, "align-items", "items", $responsive: true);
-
- /* Générer des classes utilitaires surface */
- @include mixins.css-class(
-  theme.$surface-color-aliases,
-  "background-color",
-  "surface",
-  $responsive: true
- );
-
- /* Générer des classes utilitaires border color */
- @include mixins.css-class(
-  theme.$border-color-aliases,
-  "background-color",
-  "color-border",
-  $responsive: true
- );
-
- /* Générer des classes utilitaires font weight */
- @include mixins.css-class($font-weight-values, "font-weight", "font", $responsive: true);
-
- /* Générer des classes utilitaires text color */
- @include mixins.css-class(theme.$text-color-aliases, "color", "text", $responsive: true);
-
- /* Générer des classes utilitaires icon color */
- @include mixins.css-class(theme.$text-color-aliases, "color", "icon", $responsive: true);
-
- /* Générer des classes utilitaires icon size */
- @include mixins.css-class(theme.$icon-size-aliases, "width", "icon-size", $responsive: true);
+  /* Générer des classes utilitaires surface */
+  @include mixins.css-class(
+    $surface-color-aliases,
+    "background-color",
+    "surface",
+    $responsive: false
+  );
 }

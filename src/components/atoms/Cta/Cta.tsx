@@ -1,15 +1,26 @@
 import { Icon } from "@components";
 import type { CtaProps } from "@types";
+import { resolveExternalLinkAttributes } from "@utils/links";
 
 import "./Cta.scss";
 
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
-function mergeExternalRel(rel?: string) {
- const tokens = new Set((rel ?? "").split(/\s+/).filter(Boolean));
- tokens.add("noopener");
- tokens.add("noreferrer");
- return Array.from(tokens).join(" ");
+function resolveAriaLabel(value: unknown, fallback?: string): string | undefined {
+ if (typeof fallback === "string" && fallback.trim().length > 0) {
+  return fallback.trim();
+ }
+
+ if (typeof value === "string") {
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : undefined;
+ }
+
+ if (typeof value === "number") {
+  return `${value}`;
+ }
+
+ return undefined;
 }
 
 export default function Cta(props: CtaProps) {
@@ -27,6 +38,7 @@ export default function Cta(props: CtaProps) {
  } = props;
 
  const content = children ?? label;
+ const contentLabel = resolveAriaLabel(content, label);
  const mergedClassName = ["btn", `btn-${variant}`, wide && "btn__wide", className]
   .filter(Boolean)
   .join(" ");
@@ -46,24 +58,29 @@ export default function Cta(props: CtaProps) {
    rel?: string;
    target?: string;
   };
-  const resolvedRel = externalLink ? mergeExternalRel(rel) : rel;
-  const resolvedTarget = externalLink ? "_blank" : target;
+  const resolved = resolveExternalLinkAttributes({ externalLink, rel, target });
+  const ariaLabel =
+   (anchorProps as { "aria-label"?: string })["aria-label"] ?? contentLabel ?? "Action";
+
   return (
    <a
     className={mergedClassName}
     href={href}
-    rel={resolvedRel}
-    target={resolvedTarget}
+    rel={resolved.rel}
+    target={resolved.target}
     {...anchorProps}
+    aria-label={ariaLabel}
    >
     {innerContent}
    </a>
   );
  } else {
   const { type = "button", ...buttonProps } = rest as ButtonHTMLAttributes<HTMLButtonElement>;
+  const ariaLabel =
+   (buttonProps as { "aria-label"?: string })["aria-label"] ?? contentLabel ?? "Action";
 
   return (
-   <button className={mergedClassName} type={type} {...buttonProps}>
+   <button className={mergedClassName} type={type} {...buttonProps} aria-label={ariaLabel}>
     {innerContent}
    </button>
   );
